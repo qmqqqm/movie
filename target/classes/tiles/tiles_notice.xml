@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="menu"   value="/WEB-INF/views/common/menu.jsp"/>
+		<put-attribute name="body"   value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+	</definition>
+	
+	<!-- 공지사항 목록 조회 -->
+	<definition name="noticeBoard"  extends="baseLayout">
+		<put-attribute name="title" value="공지사항" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/notice/noticeBoard.jsp" />
+	</definition>
+
+	<!-- 공지사항 글 작성 -->
+	<definition name="noticeWriter"  extends="baseLayout">
+		<put-attribute name="title" value="공지사항 작성" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/notice/noticeWriter.jsp" />
+	</definition>
+
+	<!-- 공지사항 글 상세 조회 -->
+	<definition name="noticeDetail"  extends="baseLayout">
+		<put-attribute name="title" value="공지사항 상세보기" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/notice/noticeDetail.jsp" />
+	</definition>
+	
+</tiles-definitions>

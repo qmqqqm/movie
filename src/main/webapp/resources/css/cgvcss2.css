@@ -1,0 +1,24 @@
+﻿/*1400729 cine de chef slide*/
+.cinedechef_wrap .flex-control-paging,.flex-pauseplay {display:inline-block;*display:inline;*zoom:1;padding-top:20px}
+.cinedechef_wrap .flex-pauseplay a {display:block;margin:0 3px}
+.cinedechef_wrap .flex-pauseplay .flex-pause {cursor:pointer;display:block;font-size:0;text-indent:-99999px;width:13px;height:13px;background:url(../../Event/develop/1407_disney_artgallery/tab2/btn_pause.png) no-repeat 0 0}
+.cinedechef_wrap .flex-pauseplay .flex-play{cursor:pointer;display:block;font-size:0;text-indent:-99999px;width:13px;height:13px;background:url(../../Event/develop/1407_disney_artgallery/tab2/btn_play.png) no-repeat 0 0}
+.cinedechef_wrap .flex-control-paging li {display:inline-block;*display:inline;*zoom:1;margin:0 3px}
+.cinedechef_wrap .flex-control-paging li a {cursor:pointer;display:block;font-size:0;text-indent:-99999px;width:13px;height:13px;background:url(../../Event/develop/1407_disney_artgallery/tab2/pager_off.png) no-repeat 0 0}
+.cinedechef_wrap .flex-control-paging li a.flex-active {display:block;font-size:0;text-indent:-99999px;width:13px;height:13px;background:url(../../Event/develop/1407_disney_artgallery/tab2/pager_on.png) no-repeat 0 0}
+.cinedechef_wrap {
+    position: relative;
+}
+.cinedechef_wrap .slider_wrap {width:492px;height: 630px;overflow:hidden}
+.cinedechef_wrap .slider_wrap ul.slides {padding:0}
+.cinedechef_wrap .slider_wrap {position:absolute;top: 1235px;left: 0;
+}
+.cinedechef_wrap ol.flex-control-nav.flex-control-paging {
+position: absolute;
+bottom: 30px;
+left: 158px;
+}
+.cinedechef_wrap .flex-pauseplay {
+position: absolute;
+bottom: 30px;left: 310px;
+}

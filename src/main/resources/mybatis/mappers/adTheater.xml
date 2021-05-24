@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+      <![CDATA[ 쿼리문 ]]>
+      쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+      문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- 관리자 입장 theater테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="adTheater">
+
+<!--영화관 목록  -->
+	<select id="TheaterList" resultType="TheaterDTO">
+			select * from theater
+	</select>
+
+	<!--영화관 목록  -->
+	<select id="selectTheaterList" resultType="TheaterDTO" parameterType="RowDTO">
+			<![CDATA[ 
+			SELECT theater_id,theater_name,theater_location,theater_address,theater_phone,theater_isshow
+			FROM(
+				select t.*, rownum as rnum
+				from (select * from theater)
+				t)
+			where rnum >= #{start} and rnum <= #{end}
+	]]>
+	</select>
+
+	<!--영화관 지역명  목록  -->
+	<select id="selectlocationList" resultType="string">
+			select distinct theater_location from theater
+	</select>
+		
+	<!--영화관 생성  -->
+	<insert id="createTheater"  parameterType="TheaterDTO">
+		insert into theater(theater_id,theater_name,theater_location,theater_address,theater_phone,theater_isshow,image_id)
+		values(theater_seq.nextval,#{theater_name},#{theater_location},#{theater_address},#{theater_phone},'y',#{image_id})
+	</insert>
+	
+	<!--영화관 삭제-노출여부를 n으로 update  -->
+	<update id="deleteTheater"  parameterType="java.lang.Integer">
+		UPDATE theater
+		SET theater_isshow = 'n'
+		WHERE theater_id=#{theater_id}
+	</update>
+
+	<!--영화관 목록  -->
+	<select id="theaterInform" resultType="TheaterDTO" parameterType="java.lang.Integer">
+			SELECT 	theater_id,theater_name,theater_location,theater_address,theater_phone,theater_isshow,image_id
+			FROM 	theater
+			where theater_id=#{theater_id}
+	</select>
+	
+	<update id="modifyTheater" parameterType="TheaterDTO">
+		UPDATE theater
+		SET theater_name=#{theater_name},
+			theater_location=#{theater_location},
+			theater_address=#{theater_address},
+			theater_phone=#{theater_phone},
+			theater_isshow=#{theater_isshow},
+			image_id=#{image_id}
+		WHERE theater_id=#{theater_id}
+	</update>
+	
+	<!-- 극장이미지들 정보 업로드  -->
+	<insert id="theaterImage" parameterType="com.movie.movie.theater.dto.TheaterImageDTO">
+	<selectKey resultType="int" order="BEFORE" keyProperty="image_id">
+		select TheaterImage_seq.nextval from dual 
+	</selectKey>
+		insert into TheaterImage(image_id,filename,credate,isShow) values(#{image_id},#{filename},sysdate,'y')
+	</insert>
+	
+	<select id="chooseTheImg" resultType="com.movie.movie.theater.dto.TheaterImageDTO">
+		select * from TheaterImage
+	</select>
+	
+	<select id="movieList" resultType="MovieDTO">
+		select * from movie
+	</select>
+	
+	<select id="sangygList" resultType="SangygDTO" parameterType="int">
+		select * from sangyg 
+		where theater_id = #{theater_id}
+	</select>
+	
+	<select id="sangygInform" resultType="SangygDTO" parameterType="int">
+		select * 
+		from sangyg 
+		where theater_id = #{theater_id}
+	</select>
+
+	<insert id="createTimeT" parameterType="BeforeTimeDTO">
+		insert into times(sangyg_id,theater_id,times_id,times_seat, times_time,times_isshow, movie_id)
+		values (#{sangyg_id},
+				#{theater_id},
+				times_seq.nextval,
+				#{times_seat},
+				#{times_time},
+				'y',
+				#{movie_id}
+				)
+	</insert>
+	
+	<select id="timesList" resultType="TimesDTO" parameterType="int">
+		select * from times
+		where theater_id = #{theater_id}
+		order by sangyg_id
+	</select>
+	
+	<select id="getMovieTitle" resultType="string" parameterType="int">
+	 select movie_title
+     from movie
+   	 where movie_id= #{movie_id}
+	</select>
+	
+	<delete id="deleteTimes" parameterType="int">
+		delete from times
+		where times_id=#{times_id}
+	</delete>
+</mapper> 

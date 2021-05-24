@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   <!-- typeAliases
+A type alias is simply a shorter name for a Java type. It's only relevant to the XML configuration and simply exists to reduce redundant typing of fully qualified classnames.
+https://mybatis.org/mybatis-3/configuration.html#typeAliases-->
+   <typeAliases>
+      <typeAlias type="java.util.HashMap" alias="hmap"/>
+
+      <!--극장관련  -->
+      <typeAlias type="com.movie.movie.theater.dto.TheaterDTO" alias="TheaterDTO"/>
+      <typeAlias type="com.movie.movie.theater.dto.TotalSangygDTO" alias="TotalSangygDTO"/>
+      <typeAlias type="com.movie.movie.theater.dto.TimesDTO" alias="TimesDTO"/>
+      <typeAlias type="com.movie.movie.theater.dto.MovieDTO" alias="TMovieDTO"/>
+      <typeAlias type="com.movie.movie.theater.dto.SangygDTO" alias="SangygDTO"/>
+      <typeAlias type="com.movie.movie.theater.dto.BeforeTimeDTO" alias="BeforeTimeDTO"/>
+      
+      <!--이벤트 관련  -->
+      <typeAlias type="com.movie.movie.event.dto.EventDTO" alias="EventDTO"/>
+      <typeAlias type="com.movie.movie.event.dto.EventImageDTO" alias="EventImageDTO"/>
+      
+      <!--회원 관련 -->
+      <typeAlias type="com.movie.movie.member.memberDTO.MemberDTO" alias="MemberDTO"/>
+      
+      <!-- paging 처리 관련 -->
+      <typeAlias type="com.movie.movie.theater.dto.RowDTO" alias="RowDTO"/>
+      
+      <!-- user 관련 -->
+      <typeAlias type="com.movie.movie.ticket.dto.UserDTO" alias="userDTO"/>
+       
+      <!-- 예매관련 -->
+      <typeAlias type="com.movie.movie.ticket.dto.TicketBoardDTO" alias="ticketBoardDTO"/> 
+      <typeAlias type="com.movie.movie.ticket.dto.TicketDTO" alias="ticketDTO"/> 
+      
+      <!-- 공지게시판 관련 -->
+      <typeAlias type="com.movie.movie.board.notice.dto.NoticeDTO" alias="noticeDTO"/>
+      
+      <!-- 영화관련 관련 -->
+      <typeAlias type="com.movie.movie.dto.MovieDto" alias="MovieDto"/> 
+      <typeAlias type="com.movie.movie.dto.MovieImageDto" alias="MovieImageDto"/> 
+      <typeAlias type="com.movie.movie.dto.ReviewDto" alias="Review"/> 
+      <typeAlias type="com.movie.movie.dto.PagingDto" alias="Paging"/> 
+      
+      
+      
+   </typeAliases>
+</configuration>   

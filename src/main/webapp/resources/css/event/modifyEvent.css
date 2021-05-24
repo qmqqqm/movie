@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+#modifyEvent_h1{ 
+    position:relative;
+    top:25px;
+    font-size:30px;
+    color:black;
+    padding:13px;
+    border-bottom:3px solid grey;
+    margin-top:20px;
+}
+
+
+#modify_table{
+	margin-top:60px;
+}
+#modify_table  td{
+    border-bottom:1px solid black;
+    padding:15px;
+}
+
+#modify_table td:nth-child(odd){
+    font-size:18px;
+    border-right:1px solid black;
+}
+
+#mEvent_category{
+	width:150px; 
+ font-size:14px;
+}
+#mEvent_title{
+	 height:32px;
+}
+
+#mEvent_textarea{
+	width:95%;
+  height:500px;
+}
+
+#modifyBtns{
+	margin:20px;
+    height:40px;
+    text-align:center;
+}
+#modify{
+    font: bold 15px/40px 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    margin-right:80px;
+    border:2px double pink;
+    padding:0px 3px;
+}
+#back{
+     font: bold 15px/40px 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    margin-right:80px;
+    border:2px double pink;
+    padding:2px 3px;
+	
+}

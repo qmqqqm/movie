@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#createTimes_wrap{
+
+	width:800px;
+}
+#createTimes_h1{
+	font-size:30px;
+	border-bottom: 4px solid grey;
+	margin-top:20px;s
+}
+#createTime_table{
+	margin-top:30px;
+}
+#createTime_table td{
+	padding-bottom:10px;
+}
+
+#createTimes_btns{
+    margin-top:30px;
+	height:40px;
+	text-align:center;
+}
+#createTimes_sub{
+	margin-right:100px;
+	font:bold 20px/40px "맑음 고딕";
+    color:pink;
+}
+#back{
+	font:bold 20px/40px "맑음 고딕";
+    	
+}

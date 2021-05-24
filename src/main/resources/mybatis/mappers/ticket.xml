@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="ticket">
+
+<select id="ticketForm" resultType="ticketDTO">
+<!-- 	SELECT * FROM MOVIE WHERE SYSDATE<=MOVIE_ENDDATE -->
+<![CDATA[
+	select distinct tv.movie_id, tv.movie_title, m.movie_rating
+from ticket_view tv, movie m where tv.movie_id=m.movie_id and to_char(sysdate, 'yyyy.mm.dd HH24:MI')<to_char(times_time, 'yyyy.mm.dd HH24:MI')
+]]>
+</select>
+
+<select id="location" resultType="ticketDTO">
+	select distinct theater_location from theater
+</select>
+
+<select id="theater" resultType="ticketDTO">
+	select theater_name,theater_id from theater where theater_location='서울' 
+</select>
+
+<select id="nal" resultType="String">
+	select times_time from times
+</select>
+
+<select id="ticketpeople" parameterType="ticketDTO" resultType="_int">
+	select sangyg_seats from sangyg where sangyg_id=#{sangyg_id} and theater_id=#{theater_id}
+</select>
+	<!--  극장선택 아작스 -->
+	<select id="theaterchoice" parameterType="string" resultType="ticketDTO">
+		select * from theater where theater_location= #{theater_location}
+	</select>
+	<!--아작스용 유저선택-->
+	<select id="userSelect" parameterType="ticketDTO" resultType="ticketDTO">
+			select * from ticket_view
+			<trim prefix="where" prefixOverrides="and">
+				<if test="movie_id!=null and movie_id!= ''">
+				<![CDATA[
+					and movie_id=#{movie_id}
+					and to_char(sysdate, 'yyyy.mm.dd HH24:MI')<to_char(times_time, 'yyyy.mm.dd HH24:MI')
+				]]>
+				</if>
+				<if test="theater_name!=null and theater_name!= ''">
+				<![CDATA[
+					and theater_id=#{theater_id}
+					and to_char(sysdate, 'yyyy.mm.dd HH24:MI')<to_char(times_time, 'yyyy.mm.dd HH24:MI')
+				]]>
+				</if>
+				<if test="ticket_time!=null and ticket_time!= ''">
+				<![CDATA[
+					and to_char(TIMES_TIME, 'yyyymmdd')=#{TIMES_TIME}
+					and to_char(sysdate, 'yyyy.mm.dd HH24:MI')<to_char(times_time, 'yyyy.mm.dd HH24:MI')
+				]]>
+				</if>
+				</trim>
+	</select>
+
+	<select id="selectTime" parameterType="string" resultType="ticketDTO">
+	<!-- select 
+			to_char(times_time,'HH24:MI') times_time, sangyg_id, theater_id, times_id, times_seat, times_isshow, movie_id
+		 from 
+		 	times 
+		 where 
+		 	movie_id=#{movie_id} 
+ 		and 
+		 	theater_id=#{theater_id} 
+	 	and 
+		 	to_char(times_time, 'yyyymmdd')=#{times_time}
+        and 
+            to_char(sysdate, 'yyyy.mm.dd HH24:MI')<to_char(times_time, 'yyyy.mm.dd HH24:MI') -->
+	<![CDATA[
+         select distinct
+			to_char(times_time,'HH24:MI') times_time, t.sangyg_id, t.theater_id, t.times_id, t.times_seat, t.times_isshow, t.movie_id, sangyg_name
+		 from 
+		 	times t, sangyg s
+		 where
+            t.sangyg_id=s.sangyg_id
+         and
+		 	t.movie_id=#{movie_id} 
+ 		and 
+		 	t.theater_id=#{theater_id} 
+	 	and 
+		 	to_char(times_time, 'yyyymmdd')=#{times_time}
+        and 
+            to_char(sysdate, 'yyyy.mm.dd HH24:MI')<to_char(times_time, 'yyyy.mm.dd HH24:MI')
+ 	]]>
+	</select>
+	
+	<insert id="ticketComplete" parameterType="ticketDTO">
+	insert into TICKET(TICKET_id, movie_id,MEMBER_ID, theater_id, TICKET_DATE, TICKET_TIME, TICKET_PRICE, TICKET_QUANTITY, sangyg_id, TICKET_isshow,TICKET_SEATS) 
+    values(TICKET_seq.nextval,#{movie_id},#{member_id},#{theater_id},TO_DATE(#{ticket_date},'YYYYMMDD') ,TO_DATE(#{ticket_time},'HH24:MI'), #{ticket_price},#{ticket_quantity},#{sangyg_id},'Y',#{ticket_seats})
+	</insert>
+	<select id="selectseat" parameterType="ticketDTO" resultType="string">
+	select TICKET_SEATS from TICKET where movie_id=#{movie_id} and sangyg_id=#{sangyg_id} and TICKET_DATE=TO_DATE(#{ticket_date},'YYYYMMDD') and TICKET_TIME=TO_DATE(#{ticket_time},'HH24:MI')
+	</select>
+
+</mapper>	

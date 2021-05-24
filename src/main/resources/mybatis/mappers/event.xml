@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+      <![CDATA[ 쿼리문 ]]>
+      쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+      문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- event테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="event">
+
+	<select id="categoryList" resultType="string">
+		select distinct event_category from event
+	</select>
+	
+	<select id="eventList" resultType="EventDTO" parameterType="map">
+	<![CDATA[ 
+	select event_id, event_category,event_title,event_content,event_wday,event_start,event_end,event_isshow,event_image_filename
+	from
+		(select e.*, rownum as rnum
+	 	 from( 	
+				SELECT e.*, i.event_image_filename event_image_filename
+				from event e, event_image i
+				where event_category = #{category}
+				and	e.event_id = i.event_id
+				and i.event_image_filetype = 'main_image'
+				and e.event_isshow = 'y' ) e 
+		)
+	where rnum >= #{start} and rnum <= #{end}
+	]]>
+	</select>
+	
+	<select id="eventInform" resultType="EventDTO" parameterType="int">
+		SELECT e.*, i.event_image_filename 
+		from event e, event_image i
+		where e.event_id = #{event_id}
+		and	e.event_id = i.event_id
+		and i.event_image_filetype = 'main_image'
+	</select>
+	
+	<select id="eventImageList" resultType="EventImageDTO" parameterType="int">
+		select * 
+	   	from  event_image 
+	   	where  event_image_filetype != 'main_image'
+		and event_id=#{event_id}
+	</select>
+
+</mapper> 

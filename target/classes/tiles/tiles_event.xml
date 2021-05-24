@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!--윤이-이벤트 -->
+	<definition name="/event/events"  extends="baseLayout">
+		<put-attribute name="title" value="EVENT" />
+		<put-attribute name="body"  value="/WEB-INF/views/event/events.jsp" />
+	</definition>
+	
+	<definition name="/event/eventDetail"  extends="baseLayout">
+		<put-attribute name="title" value="EVENT" />
+		<put-attribute name="body"  value="/WEB-INF/views/event/eventDetail.jsp" />
+	</definition>
+	
+	<!--윤이-이벤트 관리자 -->
+	<definition name="/event/admin/eventList"  extends="baseLayout">
+		<put-attribute name="title" value="EVENT" />
+		<put-attribute name="body"  value="/WEB-INF/views/event/admin/eventList.jsp" />
+	</definition>
+	
+	<definition name="/event/admin/createEvent"  extends="baseLayout">
+		<put-attribute name="title" value="EVENT" />
+		<put-attribute name="body"  value="/WEB-INF/views/event/admin/createEvent.jsp" />
+	</definition>
+	
+	<definition name="/event/admin/modifyEvent"  extends="baseLayout">
+		<put-attribute name="title" value="EVENT" />
+		<put-attribute name="body"  value="/WEB-INF/views/event/admin/modifyEvent.jsp" />
+	</definition>	
+
+</tiles-definitions>
+
+
+

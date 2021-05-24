@@ -1,0 +1,135 @@
+﻿/* -------------------------------------------------------------------- RESET */
+html,body                                                               {margin:0;padding:0;border:0;}
+body                                                                    {height:100%;font-size:12px;font-family:'Dotum','돋움','굴림',Sans-serif;overflow-x:hidden}
+div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldse,p                  {margin:0;padding:0;font-size:12px;font-weight:normal;vertical-align:top;list-style:none}
+table                                                                   {border-collapse:collapse;border-spacing:0}
+select                                                                  {height:20px;padding:1px;font-size:11px;font-family:'Dotum','돋움','굴림'}
+fieldset,dl,dd,dt,img                                                   {border:0;vertical-align:top}
+address,em                                                              {font-style:normal}
+hr,legend,caption                                                       {display:none}
+button,label                                                            {cursor:pointer}
+.cf:before,.cf:after                                                    {content: " "; /* 1 */display: table; /* 2 */}
+.cf:after                                                               {clear: both;}
+.cf                                                                     {*zoom: 1;}
+.blind_txt                                                              {font-size:0px;line-height:0;text-indent:-99999px;}
+.pop_spc1 {width:650px;height:auto;background:#f2f0e5;margin:0 auto}
+.header_spc1 {width:650px;height:320px;position:relative;background:url(header.png) no-repeat 0 0}
+.tab_spc1 {position:absolute;height:72px;width:650px;bottom:0;left:0;}
+.tab_spc1.v2 {background:url(bg_tab.png) repeat-x 0 100%}
+.tab_spc1 ul li{float:left;}
+.tab_spc1 ul li a {font-size:0;text-indent:-99999px;height:72px;display:block}
+.tab_spc1 ul li.tab1 a {width:325px;height:72px;background:url(tab1_off.png) no-repeat 0 0}
+.tab_spc1 ul li.tab2 a {width:325px;height:72px;background:url(tab2_off.png) no-repeat 0 0}
+.tab_spc1 ul li.tab1.on a {width:325px;height:72px;background:url(tab1_on.png) no-repeat 0 0}
+.tab_spc1 ul li.tab2.on a {width:325px;height:72px;background:url(tab2_on.png) no-repeat 0 0}
+
+
+.tab_spc1.v2 ul {padding-left:12px}
+.tab_spc1.v2 ul li{float:left;margin-right:3px}
+.tab_spc1.v2 ul li.tab1 a {width:207px;height:72px;background:url(v2/tab1_off.png) no-repeat 0 0}
+.tab_spc1.v2 ul li.tab1.on a {width:207px;height:72px;background:url(v2/tab1_on.png) no-repeat 0 0}
+
+.tab_spc1.v2 ul li.tab2 a {width:207px;height:72px;background:url(v2/tab2_off.png) no-repeat 0 0}
+.tab_spc1.v2 ul li.tab2.on a {width:207px;height:72px;background:url(v2/tab2_on.png) no-repeat 0 0}
+
+.tab_spc1.v2 ul li.tab3 a {width:207px;height:72px;background:url(v2/tab3_off.png) no-repeat 0 0}
+.tab_spc1.v2 ul li.tab3.on a {width:207px;height:72px;background:url(v2/tab3_on.png) no-repeat 0 0}
+
+
+
+
+.spc_cont {position:relative;width:650px;}
+.spc_cont.tab1 {background:url(bg_cont1.jpg) no-repeat 0 0;height:1428px;}
+.spc_cont.tab1.none_bn{background:url(bg_cont1_nonebn.jpg) no-repeat 0 0;height:1239px;}
+.spc_cont.tab2 {background:url(bg_cont2.jpg) no-repeat 0 0;height:953px;}
+.spc_cont.tab3 {background:url(bg_cont3.jpg) no-repeat 0 0;height:953px;}
+.spc_cont.tab3 label {display:block;font-size:0;text-indent:-99999px;line-height:0}
+.spc_cont.tab3 .user_out input{position:absolute;left:60px;top:380px;width:307px;padding:0;padding-left:18px;height:56px;line-height:56px;border:2px solid #53c4cc;font-size:20px;font-weight:bold}
+.spc_cont.tab3 .user_out input.placeholder {color:#bdbcbc}
+.spc_cont.tab3 .btn_out {position:absolute;left:394px;top:380px;}
+.spc_cont.tab3 .spc_chk_agree input[type=checkbox] {display:none}
+.spc_cont.tab3 .spc_chk_agree span{position:absolute;background:url(chk_off.png) no-repeat 0 0;width:19px;height:20px;left:60px;top:337px}
+.spc_cont.tab3 .spc_chk_agree span.on {position:absolute;background:url(chk_on.png) no-repeat 0 0}
+
+
+
+.pop_spc1 .btn_join{position:absolute;left:140px;top:1016px;}
+.pop_spc1 .btn_club_coupon{position:absolute;left: 447px;
+bottom: 81px;}
+/*popup*/
+.pop_club_dim {position:absolute;width:100%;height:1748px;top:0;left:0;background:url(../../event/develop/1402_cgv_spc_club/bg_over.png) 0 0;z-index:200;}
+
+
+
+
+/*14.8.31 이후 .pop_club_dim {height:2157px!important} 삭제 시작*/
+.pop_club_dim {height:2157px!important}
+/*14.8.31 이후 삭제 끝*/
+
+
+
+
+.pop_club1 {
+position:fixed;
+width:541px;
+height:612px;
+background:url(../../event/develop/1402_cgv_spc_club/bg_pop_club.jpg) no-repeat 0 0;
+z-index:500;
+top:50%;
+left:50%;
+margin-left:-270px;
+margin-top:-305px
+}
+.pop_club1 .btn_pop_close {position:absolute;width:20px;height:21px;background:url(../../event/develop/1402_cgv_spc_club/btn_pop_close.png) no-repeat 0 0;top:10px;right:16px;cursor:pointer}
+.pop_club1 .input_area {position:absolute;left:59px;top:270px;}
+.pop_club1 .input_area li {margin-bottom:20px;}
+.pop_club1 .input_area input[type=checkbox] {display:none;}
+.pop_club1 .input_area .chk_box {width:50px;height:50px;float:left;background:url(../../images/newTheater/clubx/check.gif) no-repeat 0 0;margin-right:4px;}
+.pop_club1 .input_area .chk_box.checked {float:left;background:url(../../images/newTheater/clubx/checked.gif) no-repeat 0 0}
+.pop_club1 .input_area input[type=text] {float:left;width:348px;height:46px;padding-left:14px;text-align:left;font:bold 12px/46px dotum,sans-serif;border:1px solid #53c4cc}
+.pop_club1 .input_area p {font:normal 12px dotum,sans-Seirf;color:#009ba6;letter-spacing:-1px;margin-bottom:10px;}
+.pop_club1 .btn_area {position:absolute;left:127px;top:462px;}
+
+.pop_join_end {position:fixed !important;width:390px;height:430px;left:50%;top:50%;margin-top:-215px;margin-left:-195px;background:url(bg_pop_join_end.png) no-repeat 0 0}
+.pop_join_end .btn_pop_close {position:absolute;right:26px;top:27px;cursor:pointer}
+.pop_join_end .btn_confirm {position:absolute;left:110px;top:350px;cursor:pointer}
+
+/* 14.05.09 추가 */
+.spc_cont .event_banner {
+	position: absolute;
+	top:1110px;
+	left:50%;
+	margin-left: -272.5px;
+}
+
+
+/*140725 추가 */
+.pop_spc1 a.bt_0725_photo {
+    display:none
+}
+/*8.31 삭제*/
+.spc_cont.tab1.evt0725 {
+    background:url(web_pop_1407.jpg) no-repeat 0 0;
+    height:1837px;
+}
+.spc_cont.evt0725 .event_banner {
+    top: 1568px;
+}
+.pop_spc1 .evt0725 .btn_club_coupon {
+bottom: 48px;
+left: 499px;
+}
+.pop_spc1 .evt0725 .btn_join {
+top: 1466px;
+}
+.pop_spc1 .evt0725 a.bt_0725_photo {
+    display:block;
+    position: absolute;
+    top: 1355px;
+    left: 195px;
+}
+.spc_cont.tab2.evt0725 {
+    background:url(web_pop_con2_1407.jpg) no-repeat 0 0;
+    height:1042px;
+}
+

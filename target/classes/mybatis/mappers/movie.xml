@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movie">
+
+	<select id="movieList" resultType="MovieDto">
+		<![CDATA[ 
+			SELECT T.* FROM  
+						(SELECT     m.*,   mi.movieImage_filename,rownum
+					     FROM 		movie m, movieImage mi
+					     WHERE 		m.movie_id = mi.movie_id
+					              			AND mi.MOVIEIMAGE_FILETYPE='main'
+					     ORDER BY  rownum) T
+			WHERE rownum<16 and movie_isshow='y'
+			
+		]]>
+	</select>
+	
+	<select id="movieDetail" 
+				  parameterType="Integer"
+				  resultType="MovieDto">	
+	<![CDATA[ 				  
+		SELECT T.* FROM  
+						(SELECT     m.*,   mi.movieImage_filename, mi.movieimage_filetype
+					     FROM 		movie m, movieImage mi
+					     WHERE 		m.movie_id = mi.movie_id
+					     					AND mi.MOVIEIMAGE_FILETYPE='main'
+					     ORDER BY  MI.MOVIEIMAGE_CREATED DESC) T
+			WHERE movie_id =#{movie_id} and movie_isshow='y' 
+		]]>		
+	</select>
+	
+	<select id="movieDetailImg" 
+				  parameterType="Integer"
+				  resultType="MovieDto">	
+	<![CDATA[ 				  
+		SELECT T.* FROM  
+						(SELECT     m.*,   mi.movieImage_filename, mi.movieimage_filetype, mi.movieimage_id
+					     FROM 		movie m, movieImage mi
+					     WHERE 		m.movie_id = mi.movie_id
+					     					AND mi.MOVIEIMAGE_FILETYPE='sub'
+					     ORDER BY  mi.movieimage_id DESC) T
+			WHERE movie_id =#{movie_id} and movie_isshow='y' 
+		]]>		
+	</select>
+	
+	<select id="selectMovieId" resultType="Integer" parameterType="String">
+		<![CDATA[ 
+		select movie_id from movie where movie_title=#{movie_title}
+		]]>
+	</select>
+	
+	
+	<update id="movieModify" parameterType="MovieDto">
+	<![CDATA[ 
+		update movie
+			 set movie_title=#{movie_title}, movie_time=#{movie_time}, movie_foreman=#{movie_foreman} ,movie_actor=#{movie_actor},  movie_genre=#{movie_genre}, movie_rating=#{movie_rating},movie_mainInfo=#{movie_mainInfo} 
+			 where movie_id=#{movie_id}
+		]]>
+	</update>
+	
+	<update id="movieDelete" parameterType="String">
+	<![CDATA[ 
+		update movie
+			 set movie_isshow='N'
+			 where movie_id=#{movie_id}
+		]]>
+	</update>
+	
+	<insert id="movieWrite" parameterType="MovieDto">
+	<![CDATA[ 
+		insert into movie(movie_id, movie_title, movie_time, movie_Date, movie_endDate,  movie_foreman, movie_actor, movie_genre, movie_rating,movie_isshow,movie_mainInfo) 
+    		values(movie_seq.nextval,#{movie_title},#{movie_time},TO_DATE(#{movie_Date},'YYYY-MM-DD') ,TO_DATE(#{movie_endDate},'YYYY-MM-DD'), #{movie_foreman},#{movie_actor},#{movie_genre},#{movie_rating},'y',#{movie_mainInfo})
+		]]>
+	</insert>
+	
+	<insert id="movieMainImageWrite" parameterType="hashmap">
+	<![CDATA[ 
+		insert into movieImage(movie_id, movieImage_id, movieImage_fileName, movieImage_fileType, movieImage_created) 
+    		values(#{movie_id},movieImage_seq.nextval,#{mName},'main',sysdate)
+		]]>
+	</insert>
+	
+	<insert id="movieSubImageWrite" parameterType="hashmap">
+	<![CDATA[ 
+		insert into movieImage(movie_id, movieImage_id, movieImage_fileName, movieImage_fileType, movieImage_created) 
+    		values(#{movie_id},movieImage_seq.nextval,#{subName},'sub',sysdate)
+		]]>
+	</insert>
+	
+	<delete id="movieSubImageDelete" parameterType="hashmap">
+	<![CDATA[ 
+		delete FROM movieImage where movie_id=#{movie_id} and movieImage_fileName=#{movieImage_fileName}
+		]]>
+	</delete>
+	
+	<!-- 페이징처리 -->
+	<select id="countReview" resultType="int">
+	SELECT COUNT(*) FROM review where movie_id=#{movie_id}
+</select>
+
+<!-- 페이징 처리 후 게시글 조회 -->
+<select id="selectReview" parameterType="Paging" resultType="Review">
+	SELECT *FROM (SELECT ROWNUM num, A.* 
+                         FROM review a
+                         where movie_id=#{movie_id}
+						ORDER BY review_id DESC)  
+                WHERE NUM BETWEEN #{start} AND #{end} and  review_isshow='y'
+</select>
+
+<!-- 리뷰작성 -->
+<insert id="reviewWrite" parameterType="Review">
+	insert into review values(#{movie_id},review_seq.nextval,#{review_review},#{review_grade},#{member_id},#{member_name},'y')
+</insert>
+
+<!-- 리뷰 -->
+<select id="review" resultType="Review" parameterType="Integer">
+		<![CDATA[ 
+		select movie_id,review_id,review_review,review_grade,member_id,member_name from review where review_id=#{review_id} and review_isshow='y'
+		]]>
+	</select>
+
+<!-- 리뷰수정 -->
+<update id="reviewModify" parameterType="Review">
+	update review set 
+		review_review=#{review_review}, review_grade=#{review_grade}
+	where review_id=#{review_id}
+</update>
+
+<!-- 리뷰삭제 -->
+ <update id="reviewDelete" parameterType="Integer">
+	update review set 
+		review_isshow='n'
+	where review_id=#{review_id}
+</update>
+
+
+
+	
+</mapper> 
+
+
+
+  

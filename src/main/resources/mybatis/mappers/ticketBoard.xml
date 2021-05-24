@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="ticketBoard">	
+	
+	<select id="ticketBoardList" resultType="ticketBoardDTO">
+		SELECT 	ticketBoard_id,member_Id,ticketBoard_group,ticketBoard_title,
+		ticketBoard_regDate,ticketBoard_modiDate,ticketBoard_readcount,ticketBoard_content 
+		FROM 		ticketBoard
+		WHERE		ticketBoard_isshow = 'Y'	order by ticketBoard_id desc					
+	</select>
+	<select id="ticketBoardDetail" parameterType="string" resultType="ticketBoardDTO">
+		SELECT 	ticketBoard_id,member_Id,ticketBoard_group,ticketBoard_title,
+		ticketBoard_regDate,ticketBoard_modiDate,ticketBoard_readcount,ticketBoard_content 
+		FROM 		ticketBoard
+		WHERE		ticketBoard_isshow = 'Y'	
+		and ticketBoard_id=#{ticketBoard_id}					
+	</select>
+	<insert id="ticketBoardWrite" parameterType="ticketBoardDTO">
+		insert into ticketBoard (ticketBoard_id,member_Id,ticketBoard_group,ticketBoard_title,ticketBoard_content) values(ticketBoard_seq.nextval,#{member_Id},#{ticketBoard_group},#{ticketBoard_title},#{ticketBoard_content})
+	</insert>
+	<update id="ticketBoardMod" parameterType="ticketBoardDTO">
+		update ticketBoard set ticketBoard_title=#{ticketBoard_title},ticketBoard_content=#{ticketBoard_content} where ticketBoard_id=#{ticketBoard_id}
+	</update>
+	<update id="ticketBoardDelete" parameterType="_int">
+	update ticketBoard set ticketBoard_isshow='N' where ticketBoard_id=#{ticketBoard_id}
+	</update>
+		<select id="ticketboardfindtit" resultType="ticketBoardDTO" parameterType="string">
+		SELECT 	ticketBoard_id,member_Id,ticketBoard_group,ticketBoard_title,
+		ticketBoard_regDate,ticketBoard_modiDate,ticketBoard_readcount,ticketBoard_content 
+		FROM 		ticketBoard
+		WHERE		ticketBoard_isshow = 'Y' and 	ticketBoard_title like '%'||#{searchtext}||'%' order by ticketBoard_id desc					
+	</select>
+		<select id="ticketboardfindcon" resultType="ticketBoardDTO" parameterType="string">
+		SELECT 	ticketBoard_id,member_Id,ticketBoard_group,ticketBoard_title,
+		ticketBoard_regDate,ticketBoard_modiDate,ticketBoard_readcount,ticketBoard_content 
+		FROM 		ticketBoard
+		WHERE		ticketBoard_isshow = 'Y' and 	ticketBoard_content like '%'||#{searchtext}||'%' order by ticketBoard_id desc					
+	</select>
+</mapper> 
+
+
+
+  

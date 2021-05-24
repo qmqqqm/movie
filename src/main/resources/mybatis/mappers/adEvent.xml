@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+      <![CDATA[ 쿼리문 ]]>
+      쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+      문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- admin 입장에서 event테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="adEvent">
+	<select id="eventList" resultType="EventDTO" parameterType="string">
+		SELECT e.*, i.event_image_filename 
+		from event e, event_image i
+		where event_category = #{event_category}
+		and	e.event_id = i.event_id
+		and i.event_image_filetype = 'main_image'
+	</select>
+	
+	<select id="categoryList" resultType="string">
+		select distinct event_category from event
+	</select>
+	
+	
+	<insert id="insertEvent" parameterType="hashmap">
+		<selectKey  keyProperty="event_id"	  resultType="int"	  order="BEFORE">
+			 select event_seq.nextval event_id from dual
+		</selectKey>
+
+		insert into event(
+							event_id,
+							event_category,
+							event_title,
+							event_content,
+							event_wday,
+							event_start,
+							event_end,
+							event_isshow
+						)
+					values(
+							#{event_id},
+							#{event_category},
+							#{event_title},
+							#{event_content},
+							to_char(SYSDATE,'YYYY-MM-dd'),
+							to_date(#{event_start},'YYYY-MM-DD'),
+							to_date(#{event_end},'YYYY-MM-DD'),
+							'y'
+					)
+		
+	</insert>
+
+	<insert id="insertEventImage" parameterType="EventImageDTO">
+		<selectKey resultType="int" order="BEFORE" keyProperty="event_image_id">
+			 select event_image_seq.nextval from dual
+		</selectKey>
+		insert into event_image(
+							event_image_id,
+							event_id,
+							event_image_filename,
+							event_image_filetype,
+							event_image_credate
+							)
+						values(
+							#{event_image_id},
+							#{event_id},
+							#{event_image_filename},
+							#{event_image_filetype},
+							SYSDATE
+						)
+	</insert>
+	
+	<update id="updateEvent" parameterType="int">
+		UPDATE EVENT
+		SET event_isshow = 'n'
+		WHERE event_id = #{event_id}
+	</update>
+	
+	<select id="selectUpdateEvent" resultType="EventDTO" parameterType="int">
+		SELECT e.*, i.event_image_filename 
+		from event e, event_image i
+		where e.event_id = #{event_id}
+		and	e.event_id = i.event_id
+		and i.event_image_filetype = 'main_image'
+	</select>
+	
+	<delete id="deleteEvent" parameterType="int">
+		DELETE FROM event
+		WHERE event_id = #{event_id}
+	</delete> 
+	
+	<delete id="deleteEvent_Image" parameterType="int">
+		DELETE FROM event_image
+		WHERE event_id = #{event_id}
+	</delete> 
+	
+	 
+<!-- modifyEvent 를 위해서 작성된 sql문  --> 
+	<select id="eventInform" resultType="EventDTO" parameterType="int">
+		SELECT e.*, i.event_image_filename 
+		from event e, event_image i
+		where e.event_id = #{event_id}
+		and	e.event_id = i.event_id
+		and i.event_image_filetype = 'main_image'
+	</select>
+	
+	<select id="eventImageList" resultType="EventImageDTO" parameterType="int">
+		select * 
+	   	from  event_image 
+	   	where event_id=#{event_id}
+	</select>
+	
+	<update id="updateEventInfo" parameterType="map">
+		UPDATE EVENT
+		SET event_category=#{event_category},
+			event_title=#{event_title},
+			event_content=#{event_content},
+			event_wday=SYSDATE,			
+			event_start=to_date(#{event_start},'YYYY-MM-DD'),
+			event_end=to_date(#{event_end},'YYYY-MM-DD'),
+			event_isshow=#{event_isshow}
+		WHERE event_id = #{event_id}
+	</update>
+	
+<!-- 	<delete id="deleteImage" parameterType="map">
+		DELETE FROM event_image 
+		WHERE event_id = #{event_id}
+		and	event_image_Id != #{}
+	</delete> -->
+
+	<update id="updateDel" parameterType="map">
+		update event_image
+		set event_image_del = 'y'
+		where event_id = #{event_id}
+	</update>
+
+	<insert id="insertFile" parameterType="map">
+		<selectKey resultType="int" order="BEFORE" keyProperty="event_image_id">
+			 select event_image_seq.nextval from dual
+		</selectKey>
+		insert into event_image(
+							event_image_id,
+							event_id,
+							event_image_filename,
+							event_image_filetype,
+							event_image_credate,
+							event_image_del
+							)
+						values(
+							#{event_image_id},
+							#{event_id},
+							#{event_image_filename},
+							#{event_image_filetype},
+							SYSDATE,
+							'n'
+						)
+	</insert>
+	
+	<update id="updateFile" parameterType="map">
+		UPDATE EVENT_IMAGE
+		SET event_image_del = 'n'
+		WHERE event_image_id = #{event_image_id}
+	</update>
+	
+	<delete id="deleteEventDel" parameterType="int"	>
+		delete from event_image
+		where event_id = #{event_id}
+		and event_image_del='y'
+	</delete>
+	
+	<select id="selectdel"  parameterType="int" resultType="string">
+		 select event_image_fileName
+		from event_image
+   		where event_id = #{event_id}
+  		and event_image_del = 'y'
+	</select>
+</mapper> 

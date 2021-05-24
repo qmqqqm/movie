@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+		<![CDATA[ 쿼리문 ]]>
+		쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+		문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- member테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="adminTicket">
+<resultMap type="ticketDTO"  id="ticketResult">
+		<result    property="ticket_id" 			column="ticket_id"/>
+		<result    property="member_id" 		column="member_id"/>
+		<result    property="theater_id" 			column="theater_id"/>
+		<result    property="sangyg_id" 			column="sangyg_id"/>
+		<result    property="ticket_date" 			column="ticket_date"/>
+		<result    property="ticket_time" 			column="ticket_time"/>
+		<result    property="ticket_price" 			column="ticket_price"/>
+		<result    property="ticket_quantity" 			column="ticket_quantity"/>
+		<result    property="ticket_seats" 			column="ticket_seats"/>
+		<result    property="ticket_isshow" 			column="ticket_isshow"/>		
+	</resultMap>
+	<select id="reserve" resultMap="ticketResult">
+		select TICKET_id,MEMBER_ID,theater_id,sangyg_id,TICKET_DATE,TICKET_TIME,TICKET_PRICE,TICKET_QUANTITY,TICKET_SEATS,TICKET_isshow from TICKET where TICKET_isshow='Y'
+	</select>
+	<insert id="adminTicketReplWrite" parameterType="ticketBoardDTO">
+		insert into TICKETBOARD values(#{ticketBoard_id},#{member_Id},#{ticketBoard_group},#{ticketBoard_title},sysdate,sysdate,0,#{ticketBoard_content},'Y')
+	</insert>
+	<update id="ticketcancle" parameterType="string">
+	update TICKET set TICKET_isshow='N' where TICKET_id=#{TICKET_id}
+	</update>
+		<select id="adminpayForm" resultType="string">
+		<![CDATA[
+		select sum(TICKET_PRICE) from TICKET where TICKET_isshow='Y' and TICKET_DATE<sysdate
+		]]>
+	</select>
+	<select id="adminpayFormlist" resultMap="ticketResult">
+	<![CDATA[
+	select TICKET_id,TICKET_DATE,TICKET_PRICE from TICKET where TICKET_isshow='Y' and TICKET_DATE<sysdate
+	]]>
+		
+	</select>
+	<select id="admindatepay" parameterType="ticketDTO" resultType="string">
+		<![CDATA[
+		select sum(TICKET_PRICE) from TICKET where TICKET_isshow='Y'  and TICKET_DATE between #{startDate} and #{endDate}
+		]]>
+	</select>
+	<select id="admindatepaylist" parameterType="ticketDTO" resultMap="ticketResult">
+	<![CDATA[
+	select TICKET_id,TICKET_DATE,TICKET_PRICE from TICKET where TICKET_isshow='Y' and TICKET_DATE<sysdate and TICKET_DATE between #{startDate} and #{endDate}
+	]]>
+		
+	</select>
+</mapper> 
+
+
+
+  

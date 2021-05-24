@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#theaterList_wrap{
+	position:relative;
+	float:right;
+	width:800px;
+}
+
+#theaterList_h1{	
+	font-size:35px;
+	border-bottom: 5px solid grey;
+	margin-top:20px;
+}
+
+#more_list{
+		text-align:center;
+		margin:10px auto;
+}
+	
+#more_list td{
+    padding-bottom:16px;
+}	
+
+#theaterList_createTh{
+    text-align:right;
+    height:40px;
+}
+#createTh_a{
+	font:normal 15px/40px "맑음고딕";
+	border:2px double pink;
+}
+
+#createTh_b{
+	font:normal 15px/40px "맑음고딕";
+	border:2px double pink;
+}
+
+
+
+
+#more_list_div{
+	background:pink;
+	text-align:center;
+	height:30px;
+}
+#more_list_btn{
+    font:bold 15px/30px "맑음 고딕";	
+}
+
+

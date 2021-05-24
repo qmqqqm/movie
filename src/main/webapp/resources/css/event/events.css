@@ -1,0 +1,79 @@
+charset "UTF-8";
+
+#ul_category{
+	list-style:none;
+	float:left;
+}
+#ul_category li{
+	display:inline;
+	margin-right:10px;
+}
+.categoryBtn{
+	border:none;
+	font-size:15px;
+}
+.categoryBtn:active{
+	color:pink;
+}
+.categoryBtn:checked{
+	color:pink;
+}
+
+#cols-content{
+	width:980px;
+	position:relative;
+	
+}
+
+#events_content{
+	position:relative;
+	float:right;
+	width:800px;
+}
+
+#events_h1{
+	position:relative;
+    font-size:30px;
+    color:black;
+    padding:8px;
+    border-bottom:3px solid grey;
+}
+
+#events_menu{
+    margin-top:15px;
+    text-align:left;
+    
+}
+.categoryBtn{
+	margin-left:50px;
+}
+
+#main_info{
+	margin-top:40px;
+}
+
+#events_h2Category{
+	font-size:22px;
+}
+#eventInfo{
+	border:1px solid grey;
+	margin-top: 40px;
+	margin-left: 8px;
+	display:inline-block;
+	width:256px;
+	hieght:271px;
+}
+.events_title{
+	color:black;
+	font-size:13.8px;
+	margin:15px 0px;
+}
+
+#more_list_btn{
+	display:inline-block;
+    font: 15px/40px 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+
+.on{
+	color:pink;
+}

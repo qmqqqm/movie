@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+#theaters_theater_wrap{
+	width:980px;
+	height:460px;
+	position:relative;
+    
+
+}
+
+#theaters_theater{
+	position:absolute;
+	width:970px;
+    height:380px;
+    margin-top:45px;
+    border:10px double pink;  
+
+}
+
+#theaters_often{
+	margin:40px 15px;
+	height:60px;
+	position:relative;
+}
+
+#theaters_often_span{
+	position: relative;
+	font:bold 20px/60px "맑은고딕"; 
+	display:inline-block;
+	top:0px;
+	left:0;
+}
+
+#theaters_often_ul{
+	list-style:none;
+	position: relative;
+    width:680px;
+    float:right;
+    right:90px;
+    display:block;
+}
+.theaters_often_li{
+    display:inline;
+    height:50px;
+
+}
+.bookmark{
+		display: inline-block;
+		width: 100px;
+		height:50px;
+		border: 1px solid black;
+		margin:4px 10px;
+
+}
+
+#reg{
+	font-size:20px;
+	width:50px;
+	height:50px;
+	border:1px solid black;
+	backgroud:grey;
+	float:right;
+	position:relative;
+	top:5px;
+	left:590px;
+}
+
+.mini{
+	
+	position:relative;
+	top:0px;
+	left:88px;
+	font-size: 12px;
+	padding:1px;
+	margin:0px;
+}
+
+
+#theater_location{
+	margin:30px 10px;
+	height:50px;
+	background:#ffe4e1;
+	border-top:2px solid grey;
+	border-bottom:2px solid grey;
+}
+#theater_location_ul{
+	 display:block;
+    list-style:none;
+    position: relative;
+}
+.theater_location_li{
+    display:inline;
+    float:left;
+    margin-left:40px;
+    margin-right:40px;
+  
+   
+}
+.location{
+	font: 15px/50px "맑은고딕";
+}
+
+.locationOn{
+	color:#ff3399;
+	font:bold 18px/50px "맑은고딕";
+}
+
+
+
+
+#theater_theaterName{
+	margin:20px;
+
+}
+#theaterName_ul{
+    display:block;
+    list-style:none;
+    position: relative;
+}
+.theaterName_li{
+	display:inline;
+    float:left;
+    margin:15px 20px 15px 30px;
+    padding:5px;
+}
+
+
+
+#theaters_theaterH1{
+	font-size:38px;
+	text-align:center;
+	margin-bottom:40px;
+}
+#theater_inform_wrap{
+	margin-top:30px;
+	
+	
+}
+#im{
+	width: 350px; 
+	display: none;
+}
+#th_inform{
+	height:100px;
+}
+#th_address{
+    font-size:16px;
+    color:black;
+    margin-top:10px;
+    margin-left:10px;	
+}
+#th_phone{
+	 font-size:14px;
+	 margin-left:10px;
+}
+#th_totSangyg{
+	font-size:14px;
+	 margin-left:10px;
+}
+
+
+
+#theater_times_wrap{
+	
+	margin-top:20px;
+}
+
+#theaters_timesH1{
+	font-size:35px;
+	text-align:center;
+	margin-bottom:40px;
+}
+
+#theaters_cal_ul{
+	list-style:none;
+  
+    border-top:2px solid;
+    border-bottom:2px solid;
+    height:60px;
+    margin-bottom:20px;
+}
+.theaters_cal_li{
+	float:left;
+    margin-left:80px;
+}
+
+.days_btn{
+	font: bold 20px/60px "맑은 고딕";
+}
+
+
+#theaters_mainTimes{
+
+}
+
+
+.movieInform{
+	
+	margin:20px 0px;
+	hegiht:30px;
+}
+
+#movie_rating{
+	color:pink;
+	margin-right:0px;
+    font: bold 12px/30px  'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+#movie_title{
+	font: 16px/30px  'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+#movie_genre,#movie_time,#movie_date{
+	margin:0 5px;
+	font: 14px/30px  'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+	
+}
+.sangygInFormj{
+	height:16px;
+	margin:13px 25px;
+}
+
+.sangygIco{
+	width:5px;
+	margin:0px 0px 2px 5px;
+	
+
+
+    	
+}
+#sangyg_name{
+	position:relative;
+	font: bold 12px/16px  'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    padding-bottom:12px;
+}
+
+#sangyg_id{
+	position:relative;
+	font: bold 12px/16px  'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+#sangyg_seat{
+	margin:0px;
+	font: bold 12px/16px  'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+
+
+
+
+.times_ul{
+	
+	margin-left:25px;
+	height:43px;
+}
+.times_li{
+	list-style:none;
+	float:left;	
+	border:2px solid black;
+	margin-left:1px;
+    height:43px;
+   
+}
+
+.timeBtn em{
+	font: bold 16px verdana, sans-serif;
+}
+.timeBtn{
+	padding:3px;
+}
+.times_seat{
+	color:#2275a4;
+	font: bold 13px 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

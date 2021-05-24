@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+      <![CDATA[ 쿼리문 ]]>
+      쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+      문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- event테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="lost">
+	<insert id="lostPro" parameterType="com.movie.movie.lostitem.dto.LostItemDTO">
+		insert into lost(lost_id,member_id,member_tel,member_email,lost_loc,lost_theater,lost_etc,lost_day,lost_type,lost_color,lost_title,lost_content,lost_isshow,lost_hour,lost_min) values(lost_seq.nextval,#{member_id},#{member_tel},#{member_email},#{lost_loc},#{lost_theater},#{lost_etc},#{lost_day}
+		,#{lost_type},#{lost_color},#{lost_title},#{lost_content},'y',#{lost_hour},#{lost_min})
+	</insert>
+	
+	<select id="lostListCount" resultType="java.lang.Integer">
+	  SELECT  COUNT(*) as cnt FROM lost where lost_isshow='y'
+	</select>
+	
+	<select id="lostListget" parameterType="hashmap" resultType="com.movie.movie.lostitem.dto.LostItemDTO">
+	  SELECT * FROM (SELECT ROWNUM num, A.* FROM lost a where lost_isshow='y') WHERE NUM BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="lostListDetail" parameterType="java.lang.Integer" resultType="com.movie.movie.lostitem.dto.LostItemDTO">
+		select * from lost where lost_id=#{lost_id}
+	</select>
+
+	<update id="lostListwrite" parameterType="hashmap">
+	 update lost set lost_anser=#{lost_anser} where lost_id=#{lost_id}
+	</update>
+	
+	<select id="isAnser" parameterType="java.lang.Integer" resultType="com.movie.movie.lostitem.dto.LostItemDTO">
+	  select * from lost where member_id=#{member_id} and lost_isshow='y'
+	</select>
+	
+	<update id="lostAnserFin" parameterType="java.lang.Integer">
+	 update lost set lost_isshow='n' where lost_id=#{lost_id}
+	</update>
+</mapper> 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+
+<definition extends="baseLayout" name="join">
+
+<put-attribute name="join" value="회원가입"/>
+
+<put-attribute name="body" value="/WEB-INF/views/main/user/join/join.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="/member/memberDetail">
+
+<put-attribute name="title" value="개인회원정보"/>
+
+<put-attribute name="body" value="/WEB-INF/views/member/memberDetail.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="/member/memberList">
+
+<put-attribute name="title" value="회원목록"/>
+
+<put-attribute name="body" value="/WEB-INF/views/member/memberList.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="member/myPage">
+
+<put-attribute name="mynb" value="나의 늘봄"/>
+
+<put-attribute name="body" value="/WEB-INF/views/member/myPage.jsp"/>
+
+</definition>
+
+<definition extends="baseLayout" name="member/myPageModifyForm">
+
+<put-attribute name="mynb" value="나의 늘봄 수정폼"/>
+
+<put-attribute name="body" value="/WEB-INF/views/member/myPageModifyForm.jsp"/>
+
+</definition>
+
+<!-- 회원가입 폼보여주는 layout -->
+
+
+
+<definition extends="baseLayout" name="/member/joinForm">
+
+<put-attribute name="title" value="회원가입폼"/>
+
+<put-attribute name="body" value="/WEB-INF/views/member/joinForm.jsp"/>
+
+</definition>
+
+<!-- 로그인 폼보여주는 layout -->
+
+
+
+<definition extends="baseLayout" name="/member/loginForm">
+
+<put-attribute name="title" value="로그인폼"/>
+
+<put-attribute name="body" value="/WEB-INF/views/main/user/login/loginForm.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="/board/list">
+
+<put-attribute name="title" value="게시글목록"/>
+
+<put-attribute name="body" value="/WEB-INF/views/board/list.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="/board/view">
+
+<put-attribute name="title" value="게시글 보기"/>
+
+<put-attribute name="body" value="/WEB-INF/views/board/view.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="/board/write">
+
+<put-attribute name="title" value="게시글 작성"/>
+
+<put-attribute name="body" value="/WEB-INF/views/board/write.jsp"/>
+
+</definition>
+
+
+<definition extends="baseLayout" name="clubService">
+
+<put-attribute name="clubService" value="클럽서비스"/>
+
+<put-attribute name="body" value="/WEB-INF/views/main/user/memberShip/clubService.jsp"/>
+
+</definition>
+
+</tiles-definitions>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+      <![CDATA[ 쿼리문 ]]>
+      쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+      문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- member테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="theaters">
+
+   <select id="theater" resultType="TheaterDTO">
+      SELECT    theater_id,theater_name,theater_location,theater_address,theater_phone,theater_isshow,image_id
+      FROM    theater
+      WHERE   theater_isshow = 'y'
+   </select>
+   
+   <select id="location" resultType="java.lang.String">
+      SELECT distinct theater_location
+      FROM    theater
+   </select>
+   
+   <select id="totalSangyg" resultType="TotalSangygDTO" parameterType="java.lang.Integer">
+ 	select count(sangyg_id) totSangyg_id, sum(sangyg_seats) totSangyg_seats
+   	from sangyg 
+   	where theater_id=#{theater_id}
+   </select>
+   
+   <select id="times" resultType="TimesDTO" parameterType="hashMap">
+   select  sangyg_id,theater_id, times_id,times_seat,times_time,times_isshow,movie_id
+   from times 
+   where theater_id = #{theater_id} and substr(to_char(times_time, 'YYYYMMDDHH24MI'),7,2)=#{day}
+   </select>
+   
+   <select id="movieInform" resultType="TMovieDTO" parameterType="java.lang.Integer">
+   select movie_id ,movie_title,movie_time,to_char(movie_Date, 'YYYY-MM-DD') movie_Date,
+   to_char(movie_endDate,'YYYY-MM-DD') movie_endDate,movie_foreman ,movie_actor,movie_genre,movie_rating, movie_isshow    
+	from movie
+	where movie_id=#{movie_id}
+   </select>
+   
+   <select id="sangygInform" resultType="SangygDTO" parameterType="hashMap">
+   select SANGYG_ID,THEATER_ID, SANGYG_NAME,SANGYG_ISSHOW,SANGYG_SEATS
+   from sangyg
+   where sangyg_id=#{sangyg_id} and theater_id=#{theater_id}
+   </select>
+   
+   <!-- 준기- 극장 즐겨찾기 -->
+   <select id="theNumber" parameterType="string" resultType="string">
+   select theater_name from theater where theater_location = #{theater_location}
+   </select>
+   
+   <!-- 준기- 극장 즐겨찾기추가 -->
+   <insert id="ajxPopUpreg" parameterType="Map">
+   		insert into bookmark(bookmark_id,member_id,bookmark_fir,bookmark_se,bookmark_th,bookmark_fo,bookmark_fiv) values (bookmark_seq.nextval,#{member_id},#{bookmark_fir},#{bookmark_se},#{bookmark_th},#{bookmark_fo},#{bookmark_fiv})
+   </insert>
+   
+   <!-- 준기- 극장 즐겨찾기업데이트 -->
+   <update id="ajxPopUpregUP" parameterType="Map">
+   		update bookmark set bookmark_fir=#{bookmark_fir},bookmark_se=#{bookmark_se},bookmark_th=#{bookmark_th},bookmark_fo=#{bookmark_fo},bookmark_fiv=#{bookmark_fiv} where member_id=#{member_id}
+   </update>
+   
+   <!-- 준기- 극장 즐겨찾기정보 가져오기 -->
+   <select id="selectBookMark" parameterType="java.lang.Integer" resultType="com.movie.movie.theater.dto.BookMarkDTO">
+   		select * from bookmark where member_id=#{member_id}
+   </select>
+   
+   <!-- 준기- 극장 이미지 번호 가져오기 -->
+   <select id="selImgNo" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+   		select image_id from theater where theater_id=#{theater_id}
+   </select>
+   
+   <!-- 준기- 극장 이미지 가져오기 -->
+   <select id="selImg" parameterType="java.lang.Integer" resultType="com.movie.movie.theater.dto.TheaterImageDTO">
+   		select * from THEATERIMAGE where image_id=#{image_id}
+   </select>
+</mapper> 

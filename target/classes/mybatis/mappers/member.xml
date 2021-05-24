@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+		<![CDATA[ 쿼리문 ]]>
+		쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+		문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- member테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="member">
+
+	      <!-- 다양한 type의  data의 개수가 1개	 => DTO이용	-->
+	<select id="memberDetail" 
+				  parameterType="hmap"
+				  resultType="MemberDTO">	
+		SELECT 	member_id,member_name,member_jumin,member_userid,member_pwd,member_email,member_tel,member_admin,member_isShow 
+		FROM 		MEMBER
+		WHERE		member_isShow = 'y'
+					AND member_id = #{member_id}
+	</select>			 
+
+<!-- 회원삭제 -->
+	<update id="deleteMember" parameterType="string">
+		UPDATE 	MEMBER
+		SET		member_isShow = 'n'
+		WHERE	member_userid	   = #{member_userid}
+	</update>
+
+	<insert id="joinMember"  parameterType="MemberDTO">
+		insert into member(member_id,member_name,member_jumin,member_userid,member_pwd,member_email,member_tel,member_admin,member_isShow)
+		values(member_seq.nextval, #{member_name}, #{member_jumin}, #{member_userid}, #{member_pwd}, #{member_email},#{member_tel},0, 'y')
+	</insert>
+
+	<!-- 회원목록조회 
+			 다양한 type의  data의 개수가 여러개   => collection, DTO이용
+	-->
+	<select id="getMemberList" resultType="MemberDTO">
+		<![CDATA[ 
+			SELECT 	member_id,member_name,member_jumin,member_userid,member_pwd,member_email,member_tel,member_admin,member_isShow 
+			FROM 		MEMBER
+			WHERE		member_isShow = 'y'
+		]]>
+	</select>
+	
+
+	<!-- 로그인 -->
+	<select id="login" parameterType="hmap" resultType="MemberDTO">
+		SELECT  member_id,member_userid,member_pwd,member_name,member_email,member_isShow,member_admin
+		FROM 	MEMBER
+		WHERE 	member_userid = #{member_userid} AND member_pwd = #{member_pwd} AND member_isShow = 'y'
+	</select>
+	
+	<select id="memberListCount" resultType="java.lang.Integer">
+	  SELECT  COUNT(*) as cnt FROM member
+	</select>
+
+	<select id="memberListget" parameterType="hashmap" resultType="MemberDTO">
+	  SELECT * FROM (SELECT ROWNUM num, A.* FROM member a where member_isshow='y') WHERE NUM BETWEEN #{start} AND #{end}
+	</select>
+	
+	<update id="chgMember" parameterType="MemberDTO">
+		UPDATE MEMBER SET member_userid = #{member_userid}, member_name = #{member_name}, member_tel = #{member_tel},member_email = #{member_email},member_admin = #{member_admin}
+		where member_id = #{member_id}
+	</update>
+	
+	<!-- 마이페이지 -->
+	<select id="myPage" resultType="MemberDTO" parameterType="Integer">
+		<![CDATA[ 
+			SELECT 	member_id,member_name,member_jumin,member_userid,member_pwd,member_email,member_tel,member_admin,member_isShow 
+			FROM 		MEMBER
+			WHERE		member_id = #{member_id}
+		]]>
+	</select>
+	
+	<!-- 마이페이지 : 회원수정 -->
+	<update id="myPageModify" parameterType="Integer">
+		UPDATE 	MEMBER
+		SET		member_userid = #{member_userid}, member_name = #{member_name}, member_email = #{member_email},
+				member_tel = #{member_tel}
+		WHERE	member_id = #{member_id}
+	</update>
+	
+	
+	<!-- 마이페이지 : 회원삭제 -->
+	<update id="myPageDelete" parameterType="Integer">
+		UPDATE 	MEMBER
+		SET		member_isShow = 'N'
+		WHERE	member_id = #{member_id}
+	</update>
+
+</mapper> 
+
+
+
+  

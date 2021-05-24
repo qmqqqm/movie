@@ -1,0 +1,979 @@
+﻿@charset "utf-8";
+
+.sect-club-list {margin-bottom:80px;background:url(../images/club/img_clubhd_banner.jpg) no-repeat 0 0;padding-top:110px}
+.sect-club-list.on {background:none;padding:0}
+.sect-club-list:after {clear:both; display:block; content:'';}
+.sect-club-list > .sect_desc {display:inline-block; float:right; font-size:12px; margin:20px 0 5px; padding-left:15px; background:url('../images/sub/magazine/bul_billiard_11px.png') no-repeat 0 2px;}
+.sect-club-list .clubhd_ban {clear:both; display:block; border-bottom:1px solid #000;}
+.sect-club-list .club-list {position:relative; margin:0 0 0 -14px; padding-top:413px;}
+/* .sect-club-list .club-list:after {clear:both; display:block; content:'';} */
+.sect-club-list .club-list .club-listbox {position:absolute; margin:20px 0 0 13px;}
+.sect-club-list .club-list .club-listbox.cl-box1 {left:0; top:0;}
+.sect-club-list .club-list .club-listbox.cl-box2 {right:0; top:0;}
+.sect-club-list .club-list .club-listbox {border:1px solid #edeae0; width:482px; background:#fff; box-shadow:#e5e4da 0 0 3px;}
+.sect-club-list .club-titbox {position:relative; padding:23px 20px; height:44px; background:#fff; border-bottom:1px solid #e5e5e5;}
+.sect-club-list .club-tit {display:block; margin-right:100px; font-size:24px; color:#000; font-weight:300;}
+.sect-club-list .club-date {display:block; font-size:11px; color:#666; font-family:verdana; }
+.sect-club-list .club-txt {margin:10px 0 0 0;}
+.sect-club-list .club-titbox button {position:absolute; right:20px; top:30px; min-width:79px;}
+.sect-club-list .thumb-box {position:relative; height:290px;}
+.sect-club-list .thumb-box:before {overflow:hidden; position:absolute; left:12px; top:15px; display:block; content:''; width:100px; height:80px; }
+.sect-club-list .thumb-box.user_grade:before {background:url('../images/club/img_clubgrade_badge.png') no-repeat 100% 0;}
+.sect-club-list .thumb-box.user_grade_01:before {background:url('../images/club/img_clubgrade_badge.png') no-repeat 100% -150px;}
+.sect-club-list .thumb-box.user_grade_02:before {background:url('../images/club/img_clubgrade_badge.png') no-repeat 100% -300px;}
+
+.sect-club-list .thumb-box img {display:block; width:100%; height:100%;}
+
+.sect-club-list .club-list .club-listbox.on .desc-dim {display:block;}
+.desc-dim {
+	display:none; 
+	position:absolute; 
+	left:0; right:0; top:0; bottom:0; 
+	color:#fff;
+	text-align:center;
+	background-color:rgba(0,0,0,.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+}
+
+.club-benefit {clear:both; display:none; margin:0 0 0 13px; padding-top:20px;}
+.club-benefit.on {display:block; position:relative; z-index:2;}
+.club-benefit .benefitbox {position:relative; padding:40px; background:#222;}
+.club-benefit .benefitbox:before {display:block; content:''; position:absolute; left:222px; top:-18px; width:33px; height:18px; background:url('../images/club/bg_club_benefit_arrow.png') no-repeat 0 0;}
+.club-benefit.cb-r .benefitbox:before {left:718px;}
+.club-benefit .benefitbox .btn-close {right:30px; top:30px; background:url('../images/sprite/sprite_btn.png') no-repeat -72px -241px;}
+
+.club-benefit .benefit-tit {display:block; margin-bottom:32px; font-size:34px; font-weight:500; color:#edf3f6;}
+.benefit-list {padding-top:10px;}
+.benefit-list:after {clear:both; display:block; content:'';}
+.benefit-list > li {float:left; padding-left:106px; width:343px; min-height:110px;margin:0 0 15px 0 ;background:url('../images/club/bg_benefit_list_icon.png') no-repeat 0 0;}
+.benefit-list > li.bl1 {background-position:0 10px;}
+.benefit-list > li.bl2 {background-position:0 -200px;}
+.benefit-list > li.bl3 {background-position:0 -400px;}
+.benefit-list > li.bl4 {background-position:0 -586px;}
+.benefit-list > li.bl5 {background-position:0 -998px;}
+.benefit-list > li.bl6 {background-position:0 -1225px;}
+.benefit-list .bl-tit {display:block; padding-top:4px; margin-bottom:4px; font-size:20px; font-weight:500; color:#fff; /* text-transform:uppercase */}
+.benefit-list .bl-stit {display:block; margin-bottom:4px; font-size:13px; font-weight:300; color:#fff;}
+.benefit-list > li > ul > li {padding-left:7px; font-size:13px; color:#999; line-height:1.5; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px;letter-spacing: -1px}
+.benefit-list > li .freepass_num {color:#ef8200;}
+.benefit-list > li.lineover {height:120px;}
+.benefit-list > li .link-txt {color:#3797db;}
+
+.benefit-list > li > ul > li .link-txt {display:inline-block; margin-top:7px;}
+
+.benefit-list .pop_theater_list {display:none; left:50%;top:-480px;margin-left:-280px;}
+.benefit-list .pop_theater_list .pt_list ul {float:left;width:150px}
+.benefit-list .pop_theater_list .pt_list > li {clear:both;width:190px;height:56px;border-bottom:1px solid #d1d1d1}
+.benefit-list .pop_theater_list .pt_list > li:last-child {border-bottom:none}
+
+.pop_theater_tabWrap {position:relative; text-align:center; margin-top:15px;}
+.pop_theater_tabWrap:before {position:absolute; left:0; top:36px; width:100%; display:block; content:''; clear:both; border-bottom:1px solid #d1d1d1;}
+.pop_theater_tabWrap .pop_theater_tab {overflow:hidden; display:inline-block; margin:0 auto;}
+.pop_theater_tab > li {float:left; position:relative; display:inline-block; width:165px; height:37px; margin-left:2px; line-height:36px; text-align:center; background-color:#898987; font-weight:500; font-size:13px; color:#fff; /*vertical-align:middle; border:1px solid #897b73; */}
+.pop_theater_tab > li:first-child {margin-left:0;}
+.pop_theater_tab > li:before,
+.pop_theater_tab > li:after { content:''; display:block; position:absolute; width:4px; height:4px; background:#eeeade url('../images/sub/magazine/bg_sprite_tab.png') no-repeat 0 0;}
+.pop_theater_tab > li:before{left:0; top:0; background-position:0 0;}
+.pop_theater_tab > li:after{right:0; top:0; background-position:-4px 0;}
+.pop_theater_tab > li.on {background-color:#ea1400;}
+.pop_theater_tab > li.on:before{left:0; top:0; background-position:-20px 0;}
+.pop_theater_tab > li.on:after{right:0; top:0; background-position:-24px 0;}
+.pop_theater_tab > li a {padding-left:0; font-size:inherit; color:inherit; width:auto; height:auto; line-height:inherit;}
+
+.pt_tabcont {display:none; text-align:left;}
+.pt_tabcont.on {display:block;}
+
+.benefit-list .pop_theater_list .pt_list a.on + div {top:60px;}
+
+
+/*
+.benefit-sinfo {position:relative; min-height:77px; background:url('../images/club/bg_clube_benefit_line.gif') repeat-x 0 0;}
+.benefit-sinfo:before {position:absolute; left:615px; top:35px; bottom:0; clear:both; display:block; content:''; width:2px; background:url('../images/club/bg_clube_benefit_vline.gif') repeat-y 0 0;}
+*/
+
+.benefit-sinfo {position:relative; background:url('../images/club/bg_clube_benefit_line.gif') repeat-x 0 0;}
+.benefit-sinfo:after {clear:both; display:block; content:'';}
+.benefit-sinfo .benefit-slist {padding-top:35px; float:left; width:600px;}
+.benefit-sinfo .service-join {padding-top:35px; float:right; width:270px; min-height:135px; position:relative;}
+
+.benefitbox .btn_join {padding:2px; color:#fff; font-size:16px; font-weight:500; background-color:#e91400;}
+.benefitbox .btn_join > span {display:block; height:36px; line-height:36px; border:1px solid #f27365;}
+.benefitbox .btn_join.finished {background-color:#757575;}
+.benefitbox .btn_join.finished > span {border:1px solid #ababab;}
+
+.benefit-sinfo.type2 .benefit-slist {float:none; width:auto;}
+.benefit-sinfo.type2 > .btn_join {position:absolute; right:40px; bottom:40px; width:270px;}
+
+.benefit-slist .bl-tit {float:left; line-height:1.5;word-break:keep-all;word-wrap:normal}
+.benefit-slist .bl-stit {display:block; line-height:1.5; padding-left:50px; color:#fff; font-weight:300;}
+.benefit-slist .bl-tit2{display:inline-block;padding-left:17px;margin: 0 0 4px 0}
+.benefit-slist .bl-tit3{display:inline-block;padding-left:48px;margin: 0 0 4px 0}
+.benefit-slist > li > ul + .bl-stit,
+.benefit-slist > li > ol + .bl-stit {margin-top:15px;}
+.benefit-slist > li {margin-top:15px; color:#999;}
+.benefit-slist > li:first-child {margin-top:0;}
+.benefit-slist > li > ol {list-style:decimal; padding-left:50px;}
+.benefit-slist > li > ul {padding-left:40px;}
+.benefit-slist > li > ul > li {padding-left:10px; line-height:1.5; letter-spacing:-0.5px; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px;}
+.benefit-slist > li > ol > li {line-height:1.5; letter-spacing:-0.2px; margin-top:15px;}
+.benefit-slist > li > ol > li:first-child {margin-top:0;}
+.benefit-slist.type2 > li > ul {padding-left:50px;}
+.benefit-slist.type2 > li > ul > li > ul > li{position:relative;padding-left:15px}
+.benefit-slist.type2 > li > ul > li > ul > li:before{content:'-';position:absolute;left:0;top:0;font-size:14px}
+.benefit-slist .point_txt {background-image:url('../images/club/bul_circle_red1.png'); color:#fb4357;}
+
+
+/* 노블레스 섹션 전용 텍스트 컬러 및 사이즈 조절 */
+.noblesse .benefit-sinfo .benefit-slist {width:750px}
+.noblesse .benefit-slist > li > ul {padding-left:50px}
+.noblesse .benefit-slist .bl-tit {color:#f6f9fb;font-size:14px}
+.noblesse .benefit-list > li > ul > li {color:#f6f9fb;font-size:16px;background:url('../images/club/bul_circle_gray3.png') no-repeat 0 8px}
+.noblesse .benefit-slist > li > ul > li {color:#f6f9fb;font-size:14px;background:url('../images/club/bul_circle_gray3.png') no-repeat 0 8px}
+.noblesse .benefit-list > li.bl1 {background-position:0 10px;}
+.noblesse .benefit-list > li.bl2 {background-position:0 -750px}
+.noblesse .btn_detail {position:absolute;right:40px;bottom:40px;text-align:center;padding:2px; width:270px; color:#fff; font-size:16px; font-weight:500; background-color:#e91400;}
+.noblesse .btn_detail > span {display:block; height:36px; line-height:36px; border:1px solid #f27365;}
+
+.service-join .sj-tit {display:block; color:#fff; margin:25px 0 7px;}
+.service-join .sj-tit:first-child {margin-top:0;}
+.service-join > p {line-height:1.5; color:#999;}
+.service-join ul > li {padding-left:10px; line-height:1.5; color:#999; letter-spacing:-0.2px; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px;}
+.service-join ul > li > p,
+.service-join ul > li > ul {padding-left:50px;}
+.service-join ul > li > ul > li {padding-left:10px; line-height:1.5; letter-spacing:-0.2px; background:url('../images/club/bul_bar.gif') no-repeat 0 7px;}
+.indent-txtbox > .tit {float:left;}
+.indent-txtbox > .txt {padding-left:50px;}
+.service-join .btn_join {margin-top:20px; padding:2px; width:100%;}
+.service-join .btn_join:first-child {margin-top:0;}
+
+.btn_withdraw {position:absolute; right:0; bottom:0; border:2px solid #666; color:#666;}
+.btn_withdraw span {padding:0 15px;}
+.btn_withdraw:before {background:#222 url('../images/sprite/sprite_corner01.png') no-repeat -80px 0;}
+.btn_withdraw:after {background:#222 url('../images/sprite/sprite_corner01.png') no-repeat -80px -5px;}
+.btn_withdraw span:before {background:#222 url('../images/sprite/sprite_corner01.png') no-repeat -85px 0;}
+.btn_withdraw span:after {background:#222 url('../images/sprite/sprite_corner01.png') no-repeat -85px -5px;}
+
+.btn_with_group {position:absolute; right:0; bottom:0; text-align:right;}
+.btn_with_group .btn_withdraw {position:relative;}
+
+
+.titlebar {margin:38px 0 20px; text-align:center; background:url('../images/club/bg_titlebar_line.gif') repeat-x 0 20px;}
+.titlebar > .tit {display:inline-block; padding:0 5px; background-color:#fefcf0;}
+.titlebar + .sect-ad-benner {margin-top:20px;}
+.titlebar + .sect-ad-benner ul {margin-left:-6px}
+.titlebar + .sect-ad-benner li {float:left;margin:0 0 15px 6px}
+
+.benefit-tabbox {position:relative; height:auto}
+.benefit-tab {position:relative; border:1px solid #5b5f68; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; behavior:url(PIE.htc);}
+.benefit-tab:after {clear:both; display:block; content:'';}
+.benefit-tab > li {float:left; width:225px; text-align:center;}
+.benefit-tab > li:first-child {width:224px;}
+.benefit-tab .btab-tit {display:block; padding:11px 10px; font-size:14px; color:#d3d4d4; border-left:1px solid #5b5f68;}
+.benefit-tab > li:first-child .btab-tit {border-left:0;}
+.benefit-tab > li.on {background:#5b5f68;}
+.benefit-tab > li.on .btab-tit {color:#edf3f6;}
+.benefit-tab > li.on .btab-cont {display:block;}
+
+.benefit-tab .btab-cont {display:none; position:absolute; left:0; top:86px; right:0; text-align:left;}
+.benefit-tab .btab-cont .bt-noti {margin-bottom:35px; text-align:center; font-size:13px; color:#999;}
+.btab-cont > .bl-tit {display:block; margin-top:45px; margin-bottom:5px; font-size:20px; font-weight:500; color:#fff; font-variant:uppercase;}
+.btab-cont > .bl-tit:first-child {margin-top:0;}
+.btab-cont > .bl-tit + .benefit-list {margin-top:25px;}
+.btab-cont .benefit-sinfo .service-join {min-height:0;}
+.bl-tit-desc {display:block; font-size:17px; color:#999; margin-bottom:20px;}
+.bl-tit-desc-small {display:block; font-size:13px; color:#999; margin-bottom:20px;}
+
+.benefit-slist.txtup4 > li > ul,
+.benefit-slist.txtup4 .bl-stit {padding-left:58px;}
+.benefit-slist.txtup4 > li > ol {padding-left:68px;}
+
+.benefit-tab.type2 > li {width:50%;}
+.benefit-tab.type2 > li:first-child {width:50%;}
+.benefit-tab .btab-cont .benefit-list {padding-top:0;}
+
+.benefit-tab.type3 > li {width:33.3%;}
+.benefit-tab.type3 > li:first-child {width:33.4%;}
+
+.benefit-tab.type5 > li {width:20%;}
+.benefit-tab.type5 > li:first-child {width:20%;}
+
+.benefit-tab.notab {border:0;}
+.benefit-tab.notab .btab-cont {top:0px;}
+
+.benefit-list.type2 {padding:0; margin-top:35px;}
+.benefit-list.type2 > li {padding-left:90px; width:auto; background:url('../images/club/bg_benefit_list_icon2.png') no-repeat 0 0;}
+.benefit-list.type2 > li.bl1 {width:248px; background-position:0 0;}
+.benefit-list.type2 > li.bl1 > ul {margin-top:15px;}
+.benefit-list.type2 > li.bl2 {width:190px; background-position:0 -200px;}
+.benefit-list.type2 > li.bl2 > ul {margin-top:15px;}
+.benefit-list.type2 > li.bl3 {width:190px; background-position:5px -400px;}
+.benefit-list.type2 > li.bl3 > ul {margin-top:20px;}
+
+.clubcard1318 {margin-top:-10px; min-height:136px; background:url('../images/club/img_1318clubcard.png') no-repeat 100% 0;}
+.clubcard1318 > .bl-tit {display:block; padding-top:10px; margin-bottom:15px; font-size:20px; font-weight:500; color:#fff; font-variant:uppercase;}
+.benefit-list.type3 {padding:0;}
+.benefit-list.type3 > li {float:none; padding:0 430px 0 0; width:auto; min-height:0; padding-left:7px; font-size:13px; color:#999; line-height:1.5; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px;}
+.benefit-list.type3 {margin-bottom:33px;}
+
+.benefit-list.type4 {padding:0;}
+.benefit-list.type4 > li {float:none; width:auto; min-height:0; padding-left:7px; font-size:13px; color:#999; line-height:1.5; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px;}
+.benefit-list.type4 {margin-bottom:35px;}
+.benefit-list.type4 .bl-tit {padding-top:0; margin-bottom:15px;}
+
+.benefit-list.type5 {margin:35px 0 96px;}
+.benefit-list.type5 > li {padding-left:90px; width:209px; background:url('../images/club/bg_benefit_list_icon4.png') no-repeat 0 0;}
+.benefit-list.type5 > li.bl1 {background-position:0 0;}
+.benefit-list.type5 > li.bl2 {background-position:0 -200px;}
+.benefit-list.type5 > li.bl3 {background-position:5px -400px;}
+
+.benefit-list.type6 {margin:0;}
+.benefit-list.type6 > li {padding-left:90px; width:343px; min-height:90px; background:url('../images/club/bg_benefit_list_icon6.png') no-repeat 0 0;}
+.benefit-list.type6 > li.bl1 {background:url('../images/club/bg_benefit_list_icon5.png') no-repeat -10px 0;}
+.benefit-list.type6 > li.bl2 {background-position:0 -200px;}
+.benefit-list.type6 > li.bl3 {background-position:0 -400px;}
+.benefit-list.type6 > li.bl4 {background-position:0 -600px;}
+
+.benefit-list.type7 {margin:0;}
+.benefit-list.type7 > li {padding-left:90px; min-height:120px; background:url('../images/club/bg_benefit_list_icon6.png') no-repeat 0 0;}
+.benefit-list.type7 > li.bl1 {background:url('../images/club/bg_benefit_list_icon5.png') no-repeat -10px 0; width:188px;}
+.benefit-list.type7 > li.bl2 {background-position:0 -200px; width:174px;}
+.benefit-list.type7 > li.bl3 {background-position:0 -600px; width:266px;}
+.benefit-list.type7 > li.bl4 {background-position:20px -800px; width:260px;}
+
+.benefit-list.type8 {margin:0;}
+.benefit-list.type8 > li {padding-left:106px; width:343px; min-height:90px; background:url('../images/club/bg_benefit_list_icon.png') no-repeat 0 0;}
+.benefit-list.type8 > li.bl1 {background-position: 0 -400px;}
+.benefit-list.type8 > li.bl2 {background:url('../images/club/bg_benefit_list_icon5.png') no-repeat -10px 0;}
+.benefit-list.type8 > li.bl3 {background-position:0 -1225px;}
+.benefit-list.type8 > li.bl4 {background-position:7px -1435px;}
+
+.benefit-list.type9 {margin:0;}
+.benefit-list.type9 > li {padding-left:106px; width:343px; min-height:0}
+.benefit-list.type9 > li.bl1 {background:transparent url('../images/club/bg_benefit_list_icon7_01.png') 52px center scroll no-repeat; background-size:46px 30px}
+.benefit-list.type9 > li.bl2 {background:transparent url('../images/club/bg_benefit_list_icon7_02.png') 50px center scroll no-repeat; background-size:50px 55px}
+.benefit-list.type9 > li.bl3 {background:transparent url('../images/club/bg_benefit_list_icon7_03.png') 51px center scroll no-repeat; background-size:48px 28px}
+.benefit-list.type9 > li > ul + .bl-stit {margin-top:15px;}
+
+.dv_line:after {content:'';margin:38px 0 38px 0;display:block;width:100%;height:1px;background:#2f2f2f;border-top:1px solid #000}
+.tit_benefit em{font-size:20px;font-weight:500;display: block;color:#fff;margin:0 0 4px 0}
+.tit_benefit span{font-size:13px;color:#999}
+.tit_evt_list{margin:0 0 20px 0}
+.tit_evt_list em{font-size:15px;color:#fff;font-weight: 500;}
+/* 2020 1318 클럽 */
+.desc_1318{background: #000;height:140px;position: relative;margin:0 0 40px 0}
+.desc_1318 .desc_txt{position: absolute;left:30px;top:50%;transform: translateY(-50%);}
+.desc_1318 .desc_txt .txt1{font-size:20px;color:#fff;margin:0 0 12px 0}
+.desc_1318 .desc_txt .txt2{font-size:13px;color:#999;line-height: 18px;}
+.desc_1318 .desc_txt .txt2 span{color:#fff;}
+.desc_1318 .qr_img_area{width:100px;height:100px;background:#fff;position: absolute;right:30px;top:50%;margin-top:-50px}
+.desc_1318 .qr_img_area img{width:100px;height:100px}
+.tit_benefit.club_1318{margin:0 0 15px 0}
+.benefit-list.club_1318 {margin:0;}
+.benefit-list.club_1318.col0 > li{overflow:hidden; position:relative; width:450px; min-height:90px; margin:0; padding:0; }
+.benefit-list.club_1318.col0 > li .sub_tit{float:left; font-size:0}
+.benefit-list.club_1318.col0 > li .sub_tit > div{vertical-align:top}
+.benefit-list.club_1318.col0 > li .sub_tit span{display:block; margin-top:10px; line-height:1.5em}
+.benefit-list.club_1318.col0 > li.bl2{position:relative; padding-left:70px; width:380px}
+.benefit-list.club_1318.col0 > li.bl2:before{content:''; display:block; position:absolute; left:0; top:50%; width:1px; height:140px; margin-top:-70px; background-color:rgba(153, 153, 153, 0.7)}
+.benefit-list.club_1318.col0 > li.bl1 ul{float:left; margin:0; padding:0 0 0 20px}
+.benefit-list.club_1318.col0 > li.bl2 ul{float:left; margin:0; padding:0 0 0 20px}
+.benefit-list.club_1318.col0 > li ul li{line-height:1em}
+.benefit-list.club_1318.col1 > li {position:relative; width:300px; min-height:90px; margin:0; padding:0}
+.benefit-list.club_1318.col2 > li {position:relative; width:auto; min-width:190px; max-width:225px; min-height:90px; padding:0; margin:0 23px 0 0}
+.benefit-list.club_1318 > li {background:none}
+.benefit-list.club_1318 > li ul li{font-size:14px;margin:0 0 10px 0}
+.benefit-list.club_1318 > li .sub_tit {position: relative;height:48px;margin:0 0 5px 0}
+.benefit-list.club_1318 > li .sub_tit em{font-size:20px;font-weight:600;color:#fff;display: block;}
+.benefit-list.club_1318 > li .sub_tit > div{display: inline-block;vertical-align: middle;}
+.benefit-list.club_1318 > li .sub_tit span{font-size:13px;font-weight:500;color:#fff;}
+.benefit-list.club_1318 > li .sub_tit:before{display:inline-block;vertical-align: middle;background:url('../images/club/ico_benefit_1318.png') no-repeat 0 0;}
+.benefit-list.club_1318 > li ul{display: block;}
+.benefit-list.club_1318 > li.bl1 .sub_tit:before {height:40px;content:'';display:inline-block;width:55px;background-position: 0 0;}
+.benefit-list.club_1318 > li.bl2 .sub_tit:before {height:40px;content:'';display:inline-block;width:55px;background-position: 0 -115px;}
+.benefit-list.club_1318 > li.bl3 .sub_tit:before {height:40px;content:'';display:inline-block;width:70px;background-position: 0 -229px;}
+.benefit-list.club_1318 > li.bl4 .sub_tit:before {height:42px;content:'';display:inline-block;width:55px;background-position: 0 -343px;}
+.benefit-list.club_1318 > li.bl5 .sub_tit:before {height:50px;content:'';display:inline-block;width:65px;background-position: 0 -458px;}
+.benefit-list.club_1318 > li.bl6 .sub_tit:before {height:38px;content:'';display:inline-block;width:75px;background-position: 0 -572px;}
+.benefit-list.club_1318 > li.bl7 .sub_tit:before {height:38px;content:'';display:inline-block;width:68px;background-position: 0 -686px;}
+.benefit-list.club_1318 > li.bl1 ul{padding:0 0 0 55px}
+.benefit-list.club_1318 > li.bl2 ul{padding:0 0 0 55px}
+.benefit-list.club_1318 > li.bl3 ul{padding:0 0 0 70px}
+.benefit-list.club_1318 > li.bl4 ul{padding:0 0 0 55px}
+.benefit-list.club_1318 > li.bl5 ul{padding:0 0 0 65px}
+.benefit-list.club_1318 > li.bl6 ul{padding:0 0 0 75px}
+.benefit-list.club_1318 > li.bl7 ul{padding:0 0 0 68px}
+.benefit-list.club_1318 > li > ul + .bl-stit {margin-top:15px;}
+.benefit-sinfo .benefit-slist.club_1318{padding:0 0 0 0;width: 780px;}
+.bl-tit2.club_1318.v2{padding-left:17px}
+.bl-tit2.club_1318{padding-left:65px;color:#fff;font-size:13px}
+.club_1318 ul ul{margin: 0 0 15px 0}
+.club_1318 .benefit-sinfo{background:none}
+/* 2020 1318 클럽 */
+
+.benefit-exemple {margin:35px 0 0; text-align:center;}
+.benefit-exemple > span {vertical-align:middle; display:inline-block; }
+.benefit-exemple .ex1 {width:130px; padding-top:70px; background:url('../images/club/bg_benefit_list_icon3.png') no-repeat 50% 0;}
+.benefit-exemple .ex2 {width:130px; padding-top:70px; background:url('../images/club/bg_benefit_list_icon3.png') no-repeat 50% -200px;}
+.benefit-exemple .ex-benefit {overflow:hidden; width:106px; height:105px; text-indent:-9999em; background:url('../images/club/bg_benefit_payback.gif') no-repeat 0 0;}
+
+.benefit-tabbox > .btn_join,
+.benefit-sinfo > .btn_join {position:absolute; right:0; bottom:0; width:270px;}
+
+/* 특별관 클럽 */
+.benefit-list.type1 > li.bl1, .benefit-list.type1 > li.bl2 {min-height:130px;}
+.benefit-list.type1 > li.bl3, .benefit-list.type1 > li.bl4 {min-height:120px;}
+.benefit-list.type1 > li.bl4 {background-position:0 -798px;}
+.benefit-list.type1 + .benefit-sinfo > .btn_join {bottom:auto; top:100px;}
+
+.benefitbox .grade-infobox {position:absolute; right:76px; top:15px; padding-right:108px; min-height:82px;}
+.benefitbox .grade-infobox .inner {position:relative; padding:8px 28px; border:1px solid #1d1b1b; background:#303030;}
+.benefitbox .grade-infobox .inner:before {position:absolute; right:-9px; top:50%; margin-top:-8px; display:block; content:''; width:9px; height:15px; background:url('../images/club/bg_infobox_arrow.png') no-repeat 0 0;}
+.benefitbox .grade-infobox .gi-tit {display:block; font-size:14px; color:#fff; line-height:1.5;}
+.benefitbox .grade-infobox .gi-txt {display:block; margin-top:4px; font-size:13px; color:#dad6cb; line-height:1.5;}
+.benefitbox .grade-infobox em {color:#ef8200;}
+.benefitbox .grade-infobox .gi-txt em {font-weight:500;}
+.benefitbox .grade-infobox .gi-etc {color:#ef8200;}
+.benefitbox .grade-infobox .btn_club_join {color:#ef8200; text-decoration:underline;}
+
+.benefitbox .grade-infobox.user_grade {background:url('../images/club/img_clubgrade_badge.png') no-repeat 100% 0;}
+.benefitbox .grade-infobox.user_grade_01 {background:url('../images/club/img_clubgrade_badge.png') no-repeat 100% -150px;}
+.benefitbox .grade-infobox.user_grade_01 .inner {top:9px;}
+.benefitbox .grade-infobox.user_grade_02 {background:url('../images/club/img_clubgrade_badge.png') no-repeat 100% -300px;}
+.benefitbox .grade-infobox.user_grade_02 .inner {top:9px;}
+.benefitbox .grade-infobox.user_grade_03 {background:none;}
+.benefitbox .grade-infobox.user_grade_03 .inner {top:19px;}
+.benefitbox .grade-infobox.user_grade_03 .inner:before {display:none;}
+
+.artist_intro {padding:35px 20px 35px 206px; margin-bottom:40px; background:#1c1c1c url('../images/club/img_artist_badge.png') no-repeat 62px 23px;}
+.artist_intro > .ai-tit {margin-bottom:10px; font-size:18px; color:#fff;}
+.artist_intro > ul > li {padding-left:10px; color:#999; font-size:13px; line-height:1.5; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px}
+
+.artist_intro2 {position:relative; padding:35px 190px 35px; margin-bottom:40px; background:#1c1c1c url('../images/club/img_coupling_badge_02.png') no-repeat 62px 28px;}
+.artist_intro2 > .ai-tit {margin-bottom:10px; font-size:18px; color:#fff;}
+.artist_intro2 > p {color:#999; font-size:13px; line-height:1.5;}
+.artist_intro2 > p > em {color:#fff;}
+.artist_intro2 > ul > li {padding-left:10px; color:#999; font-size:13px; line-height:1.5; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px}
+.artist_intro2 .qrcode {position:absolute; right:40px; top:20px;}
+
+/* 아트하우스 3.5.7 미션 */
+.btab-cont .mission357-event {margin-top:-15px;}
+.mission357-event .mission_txt_area{background:#000;padding:30px 0}
+.mission357-event {margin-bottom:50px; padding-bottom:2px; text-align:center; background:url('../images/club/bg_clube_benefit_line.gif') repeat-x 0 100%;}
+.mission357-event .me-tit {margin-bottom:8px; font-weight:500; font-size:22px; color:#fff;}
+.mission357-event .me-tit em {font-style:normal; color:#dc291e;}
+.mission357-event .me-txt {margin-bottom:8px; font-size:16px; color:#a2a2a2; line-height:1.5;}
+.mission357-event .me-txt > em {color:#e9c95e;}
+
+.mission-stat {position:relative; margin:0 auto; width:646px; height:262px; background:url('../images/club/bg_board_mission357.png') no-repeat 50% 0;}
+.mission-stat .mission-progress {position:absolute; left:56px; top:87px; width:0px; height:50px; background:url('../images/club/sprite_img_mission357.png') no-repeat 0 0;}
+.mission-stat .mission-progress.step1 {width:45px;}
+.mission-stat .mission-progress.step2 {width:127px;}
+.mission-stat .mission-progress.step3 {width:208px;}
+.mission-stat .mission-progress.step4 {width:289px;}
+.mission-stat .mission-progress.step5 {width:371px;}
+.mission-stat .mission-progress.step6 {width:452px;}
+.mission-stat .mission-progress.step7 {width:532px;}
+.mission-stat .mission-progress .mission-pointer {overflow:hidden; position:absolute; left:-15px; top:-86px; width:140px; height:110px; font-size:0; text-indent:-999em; background:url('../images/club/sprite_img_mission357.png') no-repeat 15px -70px;}
+.mission-stat .mission-progress.step1 .mission-pointer {background-position:-135px -70px;}
+.mission-stat .mission-progress.step2 .mission-pointer {left:66px; background-position:-135px -70px;}
+.mission-stat .mission-progress.step3 .mission-pointer {left:152px; background-position:-302px -70px;}
+.mission-stat .mission-progress.step4 .mission-pointer {left:228px; background-position:-135px -70px;}
+.mission-stat .mission-progress.step5 .mission-pointer {left:271px; background-position: -101px -241px;}
+.mission-stat .mission-progress.step6 .mission-pointer {left:392px; background-position:-135px -70px;}
+.mission-stat .mission-progress.step7 .mission-pointer {left:465px; background-position:-508px -70px;}
+.mission-stat .mission-progress.step7.done .mission-pointer {background-position:-126px -70px;}
+.mission-stat .coupon-down {position:absolute; top:160px; text-align:center;}
+.mission-stat .coupon-down .cd-tit {font-size:16px; color:#666; height:45px;}
+.mission-stat .coupon-down .cd-tit em {font-size:12px; color:#ccb054;}
+.mission-stat .coupon-down ul.cd-tit > li {position:relative; text-align:left; padding-left:8px;}
+.mission-stat .coupon-down ul.cd-tit > li:before {position:absolute; content:'ㆍ'; width:14px; left:-5px; top:0px;}
+.mission-stat .coupon-down ul.cd-tit > li.disabled {filter:alpha(opacity=30);-moz-opacity:.3;-khtml-opacity:.3;opacity:0.3;}
+.mission-stat .coupon-down button {display:none; width:110px;}
+.mission-stat .coupon-down.cd1 {left:187px;}
+.mission-stat .coupon-down.cd2 {left:350px;}
+.mission-stat .coupon-down.cd3 {left:505px; top:140px;}
+.mission-stat .coupon-down.cd3 .cd-tit {height:65px;}
+.mission-stat .coupon-down .round:before, 
+.mission-stat .coupon-down .round:after , 
+.mission-stat .coupon-down .round > *:before, 
+.mission-stat .coupon-down .round > *:after {background-color:#222;}
+
+.mission-stat .coupon-down.able .cd-tit {color:#fff;}
+.mission-stat .coupon-down.able button {display:inline-block;}
+
+.mission357-event .link-txt {font-size:16px; color:#fff; text-decoration:underline;}
+.mission-stat.type2 {position:relative; margin:5px auto 0; width:890px; height:262px; background:url('../images/club/bg_board_mission35710.png') no-repeat 50% 0;}
+.mission-stat.type2 .mission-progress {position:absolute; left:56px; top:87px; width:0px; height:50px; background:url('../images/club/sprite_img_mission35710.png') no-repeat 0 0;}
+.mission-stat.type2 .mission-progress.step1 {width:45px;}
+.mission-stat.type2 .mission-progress.step2 {width:127px;}
+.mission-stat.type2 .mission-progress.step3 {width:208px;}
+.mission-stat.type2 .mission-progress.step4 {width:289px;}
+.mission-stat.type2 .mission-progress.step5 {width:371px;}
+.mission-stat.type2 .mission-progress.step6 {width:452px;}
+.mission-stat.type2 .mission-progress.step7 {width:532px;}
+.mission-stat.type2 .mission-progress.step8 {width:613px;}
+.mission-stat.type2 .mission-progress.step9 {width:696px;}
+.mission-stat.type2 .mission-progress.step10 {width:777px;}
+.mission-stat.type2 .mission-progress .mission-pointer {overflow:hidden; position:absolute; left:-15px; top:-86px; width:140px; height:110px; font-size:0; text-indent:-999em; background:url('../images/club/sprite_img_mission35710.png') no-repeat 15px -70px;}
+.mission-stat.type2 .mission-progress.step1 .mission-pointer {background-position:-135px -70px;}
+.mission-stat.type2 .mission-progress.step2 .mission-pointer {left:66px; background-position:-135px -70px;}
+.mission-stat.type2 .mission-progress.step3 .mission-pointer {left:152px; background-position:-302px -70px;}
+.mission-stat.type2 .mission-progress.step4 .mission-pointer {left:228px; background-position:-135px -70px;}
+.mission-stat.type2 .mission-progress.step5 .mission-pointer {left:315px; background-position:-302px -70px;}
+.mission-stat.type2 .mission-progress.step6 .mission-pointer {left:392px; background-position:-135px -70px;}
+.mission-stat.type2 .mission-progress.step7 .mission-pointer {left:477px; background-position:-302px -70px;}
+.mission-stat.type2 .mission-progress.step8 .mission-pointer {left:551px; background-position:-135px -70px;}
+.mission-stat.type2 .mission-progress.step9 .mission-pointer {left:637px; background-position:-135px -70px;}
+.mission-stat.type2 .mission-progress.step10 .mission-pointer {left:710px; background-position:-508px -70px;}
+.mission-stat.type2 .mission-progress.step10.done .mission-pointer {background-position:-728px -70px;}		
+.mission-stat.type2 .coupon-down.cd1 {left:177px;}
+.mission-stat.type2 .coupon-down.cd2 {left:330px; top:140px;}
+.mission-stat.type2 .coupon-down.cd2 .cd-tit {height:65px;}
+.mission-stat.type2 .coupon-down.cd3 {left:505px; top:160px;}
+.mission-stat.type2 .coupon-down.cd3 .cd-tit {height:45px;}
+.mission-stat.type2 .coupon-down.cd4 {left:744px; top:140px;}
+.mission-stat.type2 .coupon-down.cd4 .cd-tit {height:65px;}
+.mission-stat.type2 .coupon-down .cd-tit .cnt {color:#ccb054;}
+.mission-stat.type2 .coupon-down button {display:inline-block; cursor:initial; filter:alpha(opacity=30);-moz-opacity:.3;-khtml-opacity:.3;opacity:0.3;}
+.mission-stat.type2 .coupon-down.able button {background:#e71a0f; border:2px solid #e71a0f; color:#ffffff; filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1;}
+.mission-stat.type2 .coupon-down.able button:before{background-position:0 -10px;}
+.mission-stat.type2 .coupon-down.able button:after{background-position: 0 -15px;}
+.mission-stat.type2 .coupon-down.able button > *{border:1px solid #ea5b50;}
+.mission-stat.type2 .coupon-down.able button > *:before{background-position:-5px -10px;}
+.mission-stat.type2 .coupon-down.able button > *:after{background-position:-5px -15px;}
+
+.mission-stat.type3 {position:relative; margin:60px auto 0 auto; width:890px; height:490px; background:url('../images/club/bg_board_mission_2019.png') no-repeat 0 0 #222;}
+.mission-stat.type3 .mission-progress {position:absolute;left:20px;top:108px; width:852px; height:229px; background:url('../images/club/sprite_mission_progress.png') no-repeat 0 0;}
+.mission-stat.type3 .mission-progress.step1 { background-position: 0 -289px; } 
+.mission-stat.type3 .mission-progress.step2 { background-position: 0 -578px; } 
+.mission-stat.type3 .mission-progress.step3 { background-position: 0 -867px; } 
+.mission-stat.type3 .mission-progress.step4 { background-position: 0 -1156px; } 
+.mission-stat.type3 .mission-progress.step5 { background-position: 0 -1445px; } 
+.mission-stat.type3 .mission-progress.step6 { background-position: 0 -1734px; } 
+.mission-stat.type3 .mission-progress.step7 { background-position: 0 -2023px; } 
+.mission-stat.type3 .mission-progress.step8 { background-position: 0 -2312px; } 
+.mission-stat.type3 .mission-progress.step9 { background-position: 0 -2601px; } 
+.mission-stat.type3 .mission-progress.step10 { background-position: 0 -2890px; } 
+.mission-stat.type3 .mission-progress.step11 { background-position: 0 -3179px; } 
+.mission-stat.type3 .mission-progress.step12 { background-position: 0 -3468px; } 
+
+.mission-stat.type3 .mission-progress .mission-pointer {overflow:hidden; position:absolute; left:5px; top:10px; width:140px; height:120px; font-size:0; text-indent:-999em; background:url('../images/club/sprite_img_mission_2019.png') no-repeat 0 -105px}
+.mission-stat.type3 .mission-progress.step1 .mission-pointer {width: 0;height:0;display: none}
+.mission-stat.type3 .mission-progress.step2 .mission-pointer {left:168px;top:-61px; background-position:-135px -105px;}
+.mission-stat.type3 .mission-progress.step3 .mission-pointer {left:380px;top:20px; background-position:-280px -105px;}
+.mission-stat.type3 .mission-progress.step4 .mission-pointer {left:525px;top:20px; background-position:-280px -105px;}
+.mission-stat.type3 .mission-progress.step5 .mission-pointer {left:590px;top:-61px; background-position:-135px -105px;}
+.mission-stat.type3 .mission-progress.step6 .mission-pointer {left:731px;top:-61px; background-position:-135px -105px;}
+.mission-stat.type3 .mission-progress.step7 .mission-pointer {left:748px;top:100px; background-position:-420px -105px;}
+.mission-stat.type3 .mission-progress.step8 .mission-pointer {left:608px;top:100px; background-position:-420px -105px;}
+.mission-stat.type3 .mission-progress.step9 .mission-pointer {left:450px;top:109px; background-position:-135px -105px;}
+.mission-stat.type3 .mission-progress.step10 .mission-pointer {left:318px;top:100px; background-position:-420px -105px;}
+.mission-stat.type3 .mission-progress.step11 .mission-pointer {left:170px;top:109px; background-position:-135px -105px;}
+.mission-stat.type3 .mission-progress.step12 .mission-pointer {left:-28px;top:100px;background-position:-560px -105px;}		
+.mission-stat.type3 .mission-progress.step12.done .mission-pointer {left:-28px;top:100px;background-position:-560px -105px;}		
+
+.mission-stat.type3 .coupon-down ul.cd-tit > li {position:relative; text-align:center; padding-left:0px;font-size: 14px;width: 165px;}
+.mission-stat.type3 .coupon-down ul.cd-tit > li:before {position: static!important;content:'ㆍ'; width:14px;}
+.mission-stat.type3 .coupon-down ul.cd-tit > li.disabled {filter:alpha(opacity=30);-moz-opacity:.3;-khtml-opacity:.3;opacity:0.3;}
+
+.mission-stat.type3 .coupon-down.cd1 {left:10px;top:19px;}
+.mission-stat.type3 .coupon-down.cd2 {left:292px; top:10px;}
+.mission-stat.type3 .coupon-down.cd2 .cd-tit {height:54px;}
+.mission-stat.type3 .coupon-down.cd3 {left:438px; top:0;}
+.mission-stat.type3 .coupon-down.cd3 .cd-tit {height:64px;}
+.mission-stat.type3 .coupon-down.cd4 {left:716px; top:368px;}
+.mission-stat.type3 .coupon-down.cd4 .cd-tit {height:57px;}
+.mission-stat.type3 .coupon-down.cd5 {left:576px; top:360px;}
+.mission-stat.type3 .coupon-down.cd5 .cd-tit {height:65px;}
+.mission-stat.type3 .coupon-down.cd6 {left:292px; top:368px;}
+.mission-stat.type3 .coupon-down.cd6 .cd-tit {height:57px;}
+.mission-stat.type3 .coupon-down.cd7 {left:10px; top:360px;}
+.mission-stat.type3 .coupon-down.cd7 .cd-tit {height:65px;}
+
+.mission-stat.type3 .coupon-down .cd-tit .cnt {color:#ccb054;}
+.mission-stat.type3 .coupon-down button {display:inline-block; cursor:initial; filter:alpha(opacity=30);-moz-opacity:.3;-khtml-opacity:.3;opacity:0.3;}
+.mission-stat.type3 .coupon-down.able button {background:#e71a0f; border:2px solid #e71a0f; color:#ffffff; filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1;}
+.mission-stat.type3 .coupon-down.able button:before{background-position:0 -10px;}
+.mission-stat.type3 .coupon-down.able button:after{background-position: 0 -15px;}
+.mission-stat.type3 .coupon-down.able button > *{border:1px solid #ea5b50;}
+.mission-stat.type3 .coupon-down.able button > *:before{background-position:-5px -10px;}
+.mission-stat.type3 .coupon-down.able button > *:after{background-position:-5px -15px;}
+.mission-stat.type3 .coupon-down button{width: 70px}
+
+.mission-stat.type4 {position:relative; margin:5px auto 0; width:890px; height:438px; background:url('../images/club/bg_board_mission_2020.png') no-repeat 50% 0;}
+.mission-stat.type4 .mission-progress {position:absolute; left:20px; top:201px; width:0px; height:58px; background:url('../images/club/sprite_mission_progress_2020.png') no-repeat 0 -58px;}
+.mission-stat.type4 .mission-progress.step1 {width:116px;}
+.mission-stat.type4 .mission-progress.step2 {width:211px;}
+.mission-stat.type4 .mission-progress.step3 {width:302px;}
+.mission-stat.type4 .mission-progress.step4 {width:393px;}
+.mission-stat.type4 .mission-progress.step5 {width:488px;}
+.mission-stat.type4 .mission-progress.step6 {width:580px;}
+.mission-stat.type4 .mission-progress.step7 {width:672px;}
+.mission-stat.type4 .mission-progress.step8 {width:768px;}
+.mission-stat.type4 .mission-progress.step9 {width:696px;}
+.mission-stat.type4 .mission-progress.step10 {width:777px;}
+.mission-stat.type4 .mission-progress .mission-pointer {overflow:hidden; position:absolute; left:-15px; top:-15px; width:140px; height:128px; font-size:0; text-indent:-999em; background:url('../images/club/sprite_img_mission_2020.png') no-repeat 15px 0}
+.mission-stat.type4 .mission-progress.step1 .mission-pointer {left:48px;top:-58px;background-position:-150px 0}
+.mission-stat.type4 .mission-progress.step2 .mission-pointer {left:143px;top:-58px;background-position:-150px 0}
+.mission-stat.type4 .mission-progress.step3 .mission-pointer {left:236px;top:-58px;background-position:-150px 0}
+.mission-stat.type4 .mission-progress.step4 .mission-pointer {left:358px;top:44px ;background-position:-300px 0}
+.mission-stat.type4 .mission-progress.step5 .mission-pointer {left:420px;top:-58px; background-position:-150px 0}	
+.mission-stat.type4 .mission-progress.step6 .mission-pointer {left:513px;top:-58px; background-position:-150px 0}
+.mission-stat.type4 .mission-progress.step7 .mission-pointer {left:606px;top:-58px; background-position:-150px 0}
+.mission-stat.type4 .mission-progress.step8 .mission-pointer {left:551px; background-position:-300px 0;display: none;}
+.mission-stat.type4 .mission-progress.step8.done .mission-pointer {left:750px;height:-76px;background-position:-450px 0px;display: block;}		
+.mission-stat.type4 .coupon-down ul.cd-tit > li:before{display: none;}
+.mission-stat.type4 .coupon-down ul.cd-tit > li{text-align: center;line-height:18px}
+.mission-stat.type4 .coupon-down ul.cd-tit > li:first-child{margin:0 0 16px 0}
+.mission-stat.type4 .coupon-down .cd-tit {font-size:14px;font-weight: 400;height:120px;}
+.mission-stat.type4 .coupon-down{width:400px;}
+.mission-stat.type4 .coupon-down .disabled{opacity:1!important;}
+.mission-stat.type4 .coupon-down.cd1 {left:185px;top:40px;width:400px}
+.mission-stat.type4 .coupon-down.cd2 {left:560px; top:270px;}
+.mission-stat.type4 .coupon-down .cd-tit .cnt {color:#ccb054;}
+.mission-stat.type4 .coupon-down button {display:inline-block; cursor:initial; filter:alpha(opacity=30);-moz-opacity:.3;-khtml-opacity:.3;opacity:0.3;width:80px}
+.mission-stat.type4 .coupon-down.able button {background:#e71a0f; border:2px solid #e71a0f; color:#ffffff; filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;opacity:1;}
+.mission-stat.type4 .coupon-down.able button:before{background-position:0 -10px;}
+.mission-stat.type4 .coupon-down.able button:after{background-position: 0 -15px;}
+.mission-stat.type4 .coupon-down.able button > *{border:1px solid #ea5b50;}
+.mission-stat.type4 .coupon-down.able button > *:before{background-position:-5px -10px;}
+.mission-stat.type4 .coupon-down.able button > *:after{background-position:-5px -15px;}
+
+
+.layer-wrap .pop-hd-tit {margin-bottom:30px;}
+.layer-wrap .pop-hd-tit p {font-size:16px; letter-spacing:-0.5px;}
+.layer-wrap .pop-hd-tit .em-txt {display:block; font-size:22px; margin-top:4px;}
+.layer-wrap .pop-hd-tit .em-stxt {display:block; font-size:12px; margin-top:14px; color:#ff6b11;}
+
+.layer-wrap .movies-list {margin:0 -40px 0 -20px; max-height:534px; overflow-y:auto;}
+.layer-wrap .movies-list > ul > li {padding:20px 0; text-align:left; border-top:1px solid #d9d9d7;}
+.layer-wrap .movies-list > ul > li:first-child {padding-top:0; border-top:0;}
+.layer-wrap .movies-list > ul > li .thumb {float:left; width:55px; height:70px;}
+.layer-wrap .movies-list > ul > li .thumb img {width:100%; height:100%;}
+.layer-wrap .movies-list > ul > li .txtbox {padding-left:66px; font-size:14px;}
+.layer-wrap .movies-list > ul > li .txtbox .tit {display:inline-block; padding-top:2px; vertical-align:middle;}
+.layer-wrap .movies-list > ul > li .txtbox .comm_ic {vertical-align:middle;}
+.layer-wrap .movies-list .txtbox .info {margin-top:14px;}
+
+/* 키즈 패밀리 클럽 */
+.benefitbox-spot {padding-bottom:2px; margin-bottom:40px; background:url('../images/club/bg_clube_benefit_line.gif') repeat-x 0 100%;}
+.benefitbox-spot:after {display:block; content:''; clear:both;}
+.benefitbox-spot .kids-movie {position:relative; float:left; width:300px; height:500px; padding-right:50px; margin-right:50px;}
+.benefitbox-spot .kids-movie:before {content:''; position:absolute; right:0; top:35px; bottom:0; width:2px; background:url('../images/club/bg_clube_benefit_vline.gif') repeat-y 100% 0;}
+.benefitbox-spot .todays-pick {float:left; width:500px;}
+.benefitbox-spot .kids-movie .km-tit,
+.benefitbox-spot .todays-pick .tp-tit {display:block; margin-bottom:17px; font-weight:500; font-size:15px; color:#edf3f6;}
+.benefitbox-spot .kids-movie .slider {height:420px;}
+.benefitbox-spot .kids-movie .km-poster {display:block; position:relative; width:300px; height:420px; text-align:left;}
+.benefitbox-spot .kids-movie .km-poster .movie-infocon {
+	position:absolute; left:0; bottom:0; padding:80px 20px 20px;
+	/* background:rgba(0,0,0,0.6);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000);*/
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,8) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 30%,rgba(0,0,0,8) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 30%,rgba(0,0,0,8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */
+}
+.benefitbox-spot .kids-movie .km-poster .km-movietit {overflow:hidden;display:block;width:260px;text-overflow:ellipsis;white-space:nowrap; font-weight:500; font-size:24px; color:#fff;}
+.benefitbox-spot .kids-movie .km-poster .km-date {position:absolute; right:20px; bottom:20px; color:#999;}
+
+.benefitbox-spot .kids-movie .km-poster .score {display:inline-block; padding-top:10px; font-size:13px;}
+.benefitbox-spot .kids-movie .km-poster .score .egg-gage,
+.benefitbox-spot .kids-movie .km-poster .score .percent {vertical-align:middle; color:#999; font-size:13px;}
+.benefitbox-spot .kids-movie .km-poster .score .egg-gage {margin-top:-10px; margin-left:2px; padding-left:6px; background:url('../images/common/bg/bg_writeinfo.gif') 0 12px no-repeat;}
+.benefitbox-spot .kids-movie .km-poster .score .percent span{margin-left:10px;vertical-align:initial; color:#999;}
+
+.benefitbox-spot .slider .btn-prev {left:16px; height:37px; margin-top:-19px; background-position:-134px -234px;}
+.benefitbox-spot .slider .btn-next {right:16px; height:37px; margin-top:-19px; background-position:-172px -234px;}
+
+.benefitbox-spot .todays-pick > ul:after {display:block; content:''; clear:both;}
+.benefitbox-spot .todays-pick > ul {margin:-10px;}
+.benefitbox-spot .todays-pick > ul > li {float:left; margin:10px;}
+
+/* 영화 3개 노출 유형 */
+/* .benefitbox-spot.type2 {padding:0; margin:0; background:none;} */
+.club_kids .benefitbox-spot.type2 {background:none;}
+.benefitbox-spot.type2 .kids-movie {width:280px; height:472px; padding:0; margin:0 0 0 30px;}
+.benefitbox-spot.type2 .kids-movie:first-child {margin-left:0;}
+.benefitbox-spot.type2 .kids-movie:before {display:none;}
+.benefitbox-spot.type2 .kids-movie .slider {height:392px;}
+.benefitbox-spot.type2 .kids-movie .km-poster {display:block; position:relative; width:280px; height:392px; text-align:left;}
+
+.benefitbox-spot.type2 .kids-movie .km-poster .km-movietit {width:240px;}
+.benefitbox-spot.type2 .kids-movie .km-poster .km-date {bottom:21px;}
+.benefitbox-spot.type2 .kids-movie .km-poster .score {font-size:12px;}
+.benefitbox-spot.type2 .kids-movie .km-poster .score .percent span{margin-left:5px;}
+
+.benefitbox-spot.type2 .thumb-image {display:block; position:relative; width:280px; height:392px; text-align:left;}
+.benefitbox-spot.type2 .thumb-image > img {width:100%; height:100%;}
+
+.benefitbox-spot.type2 .kids-movie .nodata {display:table; width:280px; height:392px; text-align:center; font-size:20px; color:#9197a3;}
+.benefitbox-spot.type2 .kids-movie .nodata > p {display:table-cell; vertical-align:middle;}
+
+.benefit-list.kidstype1 > li {width:auto;background:url('../images/club/bg_benefit_list_icon5.png') no-repeat 0 0;}
+.benefit-list.kidstype1 .bl-tit {padding-top:0;}
+.benefit-list.kidstype1 > li.bl1 {margin-bottom:35px; background-position:0 0;}
+
+.clubcard_kids {min-height:155px; background:url('../images/club/img_kids_club_card.png') no-repeat 100% 0;}
+.clubcard_kids > .bl-tit {display:block; margin-bottom:15px; padding-top:0; font-size:20px; font-weight:500; color:#fff; font-variant:uppercase;}
+.benefit-list.kidstype2 {padding:0;}
+.btab-cont > .bl-tit + .benefit-list.kidstype2 {margin-top:0;}
+.benefit-list.kidstype2 > li {float:none; width:auto; min-height:0; margin-bottom:0; padding-left:7px; font-size:13px; color:#999; line-height:1.5; background:url('../images/club/bul_circle_gray1.png') no-repeat 0 6px;}
+.benefit-list.kidstype2 {margin-bottom:35px;}
+.benefit-list.kidstype2 .bl-tit {padding-top:0; margin-bottom:15px;}
+
+.benefit-list.kidstype3 {padding-top:0; margin-top:35px;}
+.benefit-list.kidstype3 > li {padding-left:90px; /* min-height:90px; */ background:url('../images/club/bg_benefit_list_icon2.png') no-repeat 0 0;}
+.benefit-list.kidstype3 > li.bl1 > ul {padding-top:20px;}
+.benefit-list.kidstype3 > li.bl2 {background-position:0 -200px;}
+.benefit-list.kidstype3 > li.bl2 > ul {padding-top:10px;}
+
+.benefit-list.kidstype3-2 {padding-top:0; margin-top:35px;}
+.benefit-list.kidstype3-2 > li {padding-left:90px; background:url('../images/club/bg_benefit_list_icon2.png') no-repeat 0 0;}
+.benefit-list.kidstype3-2 > li.bl1 > ul {padding-top:35px;}
+.benefit-list.kidstype3-2 > li.bl2 {background-position:0 -200px;}
+.benefit-list.kidstype3-2 > li.bl2 > ul {padding-top:35px;}
+
+.benefit-list.kidstype4 {padding:0; margin-top:35px;}
+.benefit-list.kidstype4 > li {padding-left:100px; /* min-height:90px; */ width:auto; background:url('../images/club/bg_benefit_list_icon5.png') no-repeat 0 0;}
+.benefit-list.kidstype4 > li.bl1 {padding-left:90px; width:224px; background-position:-10px -194px;}
+.benefit-list.kidstype4 > li.bl2 {width:170px; background-position:0 -383px;}
+.benefit-list.kidstype4 > li.bl3 {padding-left:70px; width:210px; background-position:-20px -596px;}
+.benefit-list.kidstype4 > li.bl4 {padding-left:90px; width:210px; background-position:-10px -803px;}
+
+.benefit-list.kidstype4-2 {padding:0; margin-top:35px;}
+.benefit-list.kidstype4-2 > li {padding-left:100px; background:url('../images/club/bg_benefit_list_icon5.png') no-repeat 0 0;}
+.benefit-list.kidstype4-2 > li.bl3 {padding-left:75px; width:204px; background-position:-20px -596px;}
+.benefit-list.kidstype4-2 > li.bl5 {padding-left:114px; width:204px; background-position:10px -997px;}
+.benefit-list.kidstype4-2 > li.bl2 {padding-left:114px; width:180px; background-position:0 -383px;}
+.benefit-list.kidstype4-2 > li.bl4 {padding-left:75px; width:204px; background-position:-10px -803px;}
+.benefit-list.kidstype4-2 > li.bl6 {padding-left:114px; width:204px; background-position:7px -1200px;}
+.benefit-list.kidstype4-2 > li.bl7 {padding-left:114px; width:180px; min-height:140px; background-position:6px -1404px;}
+
+.benefit-list.kidstype5 {margin-top:25px;}
+.benefit-list.kidstype5 > li {padding-left:90px; width:auto; min-height:100px; background:url('../images/club/bg_benefit_list_icon.png') no-repeat 0 0;}
+.benefit-list.kidstype5 > li.bl3 {background-position:0 -400px;}
+.benefit-list.kidstype5 > li.bl3 > ul {padding-top:10px;}
+
+.benefit-list > li .line_btn_round {margin-top:7px; color:#9197a3;}
+
+.layer-wrap .kids-infocon {margin:40px auto; padding-top:40px; width:340px; border-top:2px solid #000;}
+.layer-wrap .kids-infocon .kids-info-tit {font-size:13px; margin-bottom:10px;}
+.layer-wrap .kids-infocon .kg-top {padding:30px 0 10px; text-align:right;}
+.layer-wrap .kids-infocon .kg-top .btn-remove > span {padding:3px 0 3px 25px; font-size:13px; color:#333; font-weight:500; background:url('../images/sprite/sprite_btn.png') no-repeat -25px -312px;}
+.layer-wrap .kids-infocon .kg-top + .inpbox {margin-top:0;}
+.layer-wrap .kids-infocon .inpbox.lab-in {position:relative; border:2px solid #000;}
+.layer-wrap .kids-infocon .inpbox.lab-in:after {display:block; content:''; clear:both;}
+.layer-wrap .kids-infocon .inpbox.lab-in input[type=text],
+.layer-wrap .kids-infocon .inpbox.lab-in input[type=password] {border:0;}
+.layer-wrap .kids-infocon .inpbox.lab-in > input[type=text],
+.layer-wrap .kids-infocon .inpbox.lab-in > input[type=password] {float:left; width:230px; padding:0 12px; font-size:16px; color:#000;}
+.layer-wrap .kids-infocon .inpbox.lab-in.cal > input[type=text],
+.layer-wrap .kids-infocon .inpbox.lab-in.cal > input[type=password] {width:180px;}
+.layer-wrap .kids-infocon .inpbox.lab-in .inp-tit {position:relative; float:left; padding:0 0 0 12px; margin:0; width:70px; height:37px; line-height:37px; font-size:16px; color:#666; text-align:left;}
+.layer-wrap .kids-infocon .inpbox.lab-in .inp-tit:before {position:absolute; right:0; top:50%; margin-top:-8px; display:block; content:''; width:1px; height:16px; background:#000;}
+.layer-wrap .kids-infocon .inpbox.lab-in .chkgroup {float:left; padding-left:12px; height:37px; line-height:37px;}
+.layer-wrap .kids-infocon .inpbox.lab-in .chkgroup label {display:inline-block; font-size:16px; color:#000; vertical-align:middle;} 
+.layer-wrap .kids-infocon .inpbox.lab-in .chkgroup label + input[type=radio],
+.layer-wrap .kids-infocon .inpbox.lab-in .chkgroup label + input[type=checkbox] {margin-left:26px;} 
+.layer-wrap .kids-infocon .inpbox.lab-in .chkgroup input[type=radio],
+.layer-wrap .kids-infocon .inpbox.lab-in .chkgroup input[type=checkbox] {margin-left:3px;} 
+.layer-wrap .kids-infocon .inpbox.lab-in .calendar {position:absolute; right:5px; top:50%; margin-top:-15px;} 
+.layer-wrap .kids-infocon .btn-area {margin:20px 0 50px;}
+.layer-wrap .kids-infocon .btn-add > span {padding-left:30px; padding-right:15px; background:url('../images/sprite/sprite_btn.png') no-repeat 12px -374px;}
+
+.layer-wrap.clubtype .tbl-breakdown-re > p {margin:40px 0 20px;}
+.layer-wrap.clubtype div.btn_join {margin:15px auto 0;}
+
+.benefitbox-spot .kids-movie-list{width:100%!important}
+.benefitbox-spot .kids-movie-list .km-poster {display:block; position:relative; width:280px!important; height:392px; text-align:left;}
+.benefitbox-spot .kids-movie-list .km-poster .km-movietit{width:240px;}
+.benefitbox-spot .kids-movie-list .km-poster .score{font-size:12px;display: inline-block;padding-top:10px}
+.benefitbox-spot .kids-movie-list .km-poster .score .egg-gage, .benefitbox-spot .kids-movie-list .km-poster .score .percent{font-size:12px}
+
+.benefitbox-spot .kids-movie-list .thumb-image {display: block;position: relative;width: 280px;height: 392px;text-align: left;}
+.benefitbox-spot .item-wrap{position: relative;width:280px;height:392px;margin:0 30px 0 0;float:left;overflow: hidden;}
+.benefitbox-spot .item-wrap .thumb-image img{width:100%;height:100%}
+.benefitbox-spot .item-wrap:last-child{margin:0}
+.benefitbox-spot .item-wrap {display:inline-block; float:left;}
+.benefitbox-spot .item-wrap > .item {position:absolute; z-index:5; text-align:center;}
+.benefitbox-spot .item-wrap.on > .item {z-index:10;}
+.benefitbox-spot .item-wrap.move > .item {z-index:15;}
+.benefitbox-spot .item-wrap.on > .item > a {display:block;}
+.benefitbox-spot .item-wrap > .item .ico-play {top:50%; left:50%; width:66px; height:66px; margin:-33px 0 0 -33px; background-position: -121px -21px;}
+.benefitbox-spot .kids-movie-list .list_area li{float:left;width:141px;margin:0 10px 0 0}
+.benefitbox-spot .kids-movie-list .list_area li:last-child{margin:0}
+.benefitbox-spot .kids-movie-list .list_area li img{width:100%;height:100%}
+.benefitbox-spot .kids-movie-list .desc_txt .txt1 {overflow:hidden;display:block;width:142px;text-overflow:ellipsis;white-space:nowrap; font-weight:500; font-size:16px; color:#fff;margin:20px 0 5px 0}
+
+.club_kids .benefit-tab{width:901px;}
+.benefit-list.club_kids {margin:0;}
+.benefit-list.club_kids.col1 > li {position: relative;width:280px;min-height:auto;padding:0 0 0 20px;margin:0}
+.benefit-list.club_kids.col2 > li {position: relative;width:auto;min-width:190px;max-width:225px; min-height:90px;padding:0;margin:0 23px 0 0}
+.benefit-list.club_kids > li {background:none}
+.benefit-list.club_kids > li ul li{font-size:14px;margin:0 0 10px 0}
+.benefit-list.club_kids > li .sub_tit {position: relative;height:48px;margin:0 0 5px 0}
+.benefit-list.club_kids > li .sub_tit em{font-size:20px;font-weight:600;color:#fff;display: block;}
+.benefit-list.club_kids > li .sub_tit > div{display: inline-block;vertical-align: middle;}
+.benefit-list.club_kids > li .sub_tit span{font-size:13px;font-weight:500;color:#fff;}
+.benefit-list.club_kids > li .sub_tit:before{display:inline-block;vertical-align: middle;background:url('../images/club/ico_benefit_kids.png') no-repeat 0 0;}
+.benefit-list.club_kids > li ul{display: block;}
+.benefit-list.club_kids > li.bl1 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 0;}
+.benefit-list.club_kids > li.bl2 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 -100px;}
+.benefit-list.club_kids > li.bl3 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 -200px;}
+.benefit-list.club_kids > li.bl1 ul{padding:0 0 0 65px}
+.benefit-list.club_kids > li.bl2 ul{padding:0 0 0 65px}
+.benefit-list.club_kids > li.bl3 ul{padding:0 0 0 65px}
+
+.benefit-list.club_kids_partner {margin:0;}
+.benefit-list.club_kids_partner.col1 > li {position: relative;width:280px;min-height:108px;padding:0 0 0 20px;margin:0}
+.benefit-list.club_kids_partner > li {background:none}
+.benefit-list.club_kids_partner > li ul li{font-size:14px;margin:0 0 10px 0}
+.benefit-list.club_kids_partner > li .sub_tit {position: relative;height:70px;margin:0 0 5px 0}
+.benefit-list.club_kids_partner > li .sub_tit em{font-size:20px;font-weight:600;color:#fff;display: block;margin:10px 0 10px 0}
+.benefit-list.club_kids_partner > li .sub_tit > div{display: inline-block;vertical-align: top;}
+.benefit-list.club_kids_partner > li .sub_tit span{display:block;font-size:13px;font-weight:400;color:#999;line-height:1.5; background:url('../images/club/bul_circle_gray1-2.png') no-repeat 0 6px;letter-spacing: -1px;padding-left:7px}
+.benefit-list.club_kids_partner > li .sub_tit:before{display:inline-block;vertical-align: middle;background:url('../images/club/ico_benefit_kids_partner.png') no-repeat 0 0;}
+.benefit-list.club_kids_partner > li ul{display: block;}
+.benefit-list.club_kids_partner > li.bl1 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 0;}
+.benefit-list.club_kids_partner > li.bl2 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -100px;}
+.benefit-list.club_kids_partner > li.bl3 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -200px;}
+.benefit-list.club_kids_partner > li.bl4 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -300px;}
+.benefit-list.club_kids_partner > li.bl5 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -400px;}
+.benefit-list.club_kids_partner > li.bl6 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -500px;}
+.benefit-list.club_kids_partner > li.bl7 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -600px;}
+.benefit-list.club_kids_partner > li.bl8 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -700px;}
+.benefit-list.club_kids_partner > li.bl9 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -800px;}
+.benefit-list.club_kids_partner > li.bl10 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -900px;}
+.benefit-list.club_kids_partner > li.bl11 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1000px;}
+.benefit-list.club_kids_partner > li.bl12 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1100px;}
+.benefit-list.club_kids_partner > li.bl13 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1200px;}
+.benefit-list.club_kids_partner > li.bl14 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1300px;}
+.benefit-list.club_kids_partner > li ul{padding:0 0 0 90px}
+
+.desc_club{background: #000;height:140px;position: relative;margin:0 0 40px 0}
+.desc_club .desc_txt{position: absolute;left:30px;top:50%;transform: translateY(-50%);}
+.desc_club .desc_txt .txt1{font-size:20px;color:#fff;margin:0 0 12px 0}
+.desc_club .desc_txt .txt2{font-size:13px;color:#999;line-height: 18px;}
+.desc_club .desc_txt .txt2 span{color:#fff;}
+.desc_club .qr_img_area{width:100px;height:100px;background:#fff;position: absolute;right:30px;top:50%;margin-top:-50px}
+.desc_club .qr_img_area img{width:100px;height:100px}
+
+.desc_kids_partenr{background: #000;height:44px;margin:10px 0 0 0;line-height:44px;font-weight:500px;color:#fff;font-size:13px;text-align: center;}
+.club_kids .benefit-sinfo{width:900px;background: none;}
+.club_kids .benefit-sinfo > ul{width: 840px}
+.club_kids .benefit-sinfo > ul.type2{width: 450px;}
+.club_kids .benefit-sinfo ul ul{margin:0 0 15px 0}
+.club_kids .benefit-sinfo a{color:#1083fa}
+.club_kids .tit_benefit{margin:0 0 35px 0}
+/* 4DX RED CARD MEMBERSHIP */
+.benefitbox-spot.movie-board:after {display:block; content:''; clear:both;}
+.benefitbox-spot.movie-board .mb-box {position:relative; float:left; width:410px; height:355px;}
+.benefitbox-spot.movie-board .mb-box:first-child {padding-right:40px; margin-right:40px;}
+.benefitbox-spot.movie-board .mb-box:first-child:before {content:''; position:absolute; right:0; top:35px; bottom:0; width:2px; background:url('../images/club/bg_clube_benefit_vline.gif') repeat-y 100% 0;}
+.benefitbox-spot.movie-board .mb-tit {display:block; margin-bottom:17px; font-weight:500; font-size:15px; color:#edf3f6;}
+.benefitbox-spot.movie-board .mb-list:after {display:block; content:''; clear:both;}
+.benefitbox-spot.movie-board .mb-list > li {float:left; margin-left:20px;}
+.benefitbox-spot.movie-board .mb-list > li:first-child {margin-left:0;}
+.benefitbox-spot.movie-board .mb-list > li.nodata {width:100%; height:273px; text-align:center; font-size:20px; color:#9197a3;}
+.benefitbox-spot.movie-board .mb-list > li.nodata > p {padding-top:125px;}
+.benefitbox-spot.movie-board .thumb-image {display:block; position:relative; width:195px; height:273px; text-align:left;}
+.benefitbox-spot.movie-board .thumb-image .movie-infocon {
+	position:absolute; left:0; bottom:0; padding:80px 20px 15px;
+	/* background:rgba(0,0,0,0.6);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000);*/
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,8) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 30%,rgba(0,0,0,8) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 30%,rgba(0,0,0,8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */
+}
+.benefitbox-spot.movie-board .thumb-image .km-movietit {overflow:hidden;display:block;width:155px;text-overflow:ellipsis;white-space:nowrap; font-weight:500; font-size:20px; color:#fff;}
+.benefitbox-spot.movie-board .thumb-image .km-date {color:#999;}
+
+.redcard-4dx-con {position:relative; padding:0 40px 40px;}
+.redcard-4dx-con:after {display:block; content:''; clear:both;}
+.redcard-4dx-con .txtgroup {float:left; width:450px;}
+.redcard-4dx-con .cardimg {float:right; position:relative; color:#fff;}
+.redcard-4dx-con .cardimg .redcard-txt {position:absolute; left:5.3%; bottom:7.1%; right:5.3%;}
+.redcard-4dx-con .cardimg .redcard-txt.type2 {left:8.3%; bottom:11.1%; right:8.3%;}
+.redcard-4dx-con .cardimg .redcard-txt .rt-num {display:block; margin-bottom:2px; font-size:20px; letter-spacing:0;}
+.redcard-4dx-con .cardimg .redcard-txt .rt-stxt {display:block; font-size:13px; letter-spacing:0;}
+
+.redcard-4dx-con .rc-tit {display:block; margin-bottom:10px; padding-top:25px; font-size:20px; font-weight:500; color:#fff;}
+.redcard-4dx-con .rc-stit {display:block; margin-bottom:20px; font-size:13px; font-weight:500; color:#fff;}
+.redcard-4dx-con .rc-txt {display:block; margin-bottom:35px; font-size:13px; color:#999; line-height:1.6;}
+.redcard-4dx-con .link-txt {position:absolute; left:40px; top:165px; font-size:14px; font-weight:500; color:#2899ef;}
+.redcard-4dx-con .txtgroup .link-txt {position:static; left:0; top:0;}
+.redcard-4dx-con .txtgroup .link-txt + .link-txt {margin-left:30px;}
+
+.rc-benefit-list {clear:both; overflow:hidden; margin-top:30px; font-weight:500; font-size:14px; color:#eb2530;}
+.rc-benefit-list > li {position:relative; float:left; padding-top:130px; width:33.3%; height:70px; text-align:center; line-height:1.4;}
+.rc-benefit-list > li:before {display:block; content:''; position:absolute; left:50%; top:50%; margin:-65px 0 0 -50px; width:100px; height:100px; background:url('../images/club/bg_redcard_benefit_icons.png') no-repeat 0 0;}
+
+.rc-benefit-list .gl-icon1:before {background-position:0 0;}
+.rc-benefit-list .gl-icon2:before {background-position:-100px 0;}
+.rc-benefit-list .gl-icon3:before {background-position:-200px 0;}
+
+.redcard-4dx-con + .benefit-sinfo .benefit-slist {width:auto;}
+.redcard-4dx-con .mission357-event {padding:40px 0 10px; margin:0; background:none;}
+.redcard-4dx-con .mission357-event .me-txt {font-size:22px;}
+.redcard-4dx-con .mission357-event .mission-stat .coupon-down.cd3 {top:160px;}
+.redcard-4dx-con .mission357-event .mission-stat .coupon-down.cd3 .cd-tit {height:45px;}
+
+.redcard-4dx-con.rc-event {padding:0 50px 40px;}
+.redcard-4dx-con.rc-event .nodata {padding:50px 0; color:#9197a3; font-size:20px; text-align:center;}
+.rc-event-list {margin:0 -19px -25px;}
+.rc-event-list:after {display:block; content:''; clear:both;}
+.rc-event-list > li {float:left; margin:0 19px 25px;}
+
+/* IMAX MANIA */
+.imax-mania-con {position:relative; padding:34px 0 50px;}
+.imax-mania-con:after {display:block; content:''; clear:both;}
+.imax-mania-con .txtgroup {float:right; width:435px;}
+.imax-mania-con .cardimg {float:left; position:relative; color:#fff;}
+.imax-mania-con .cardimg > img {position:absolute; left:45px; top:20px;}
+.imax-mania-con .rc-tit {display:block; margin-bottom:10px; padding-top:25px; font-size:20px; font-weight:500; color:#fff;}
+.imax-mania-con .rc-stit {display:block; margin-bottom:20px; font-size:13px; font-weight:500; color:#fff;}
+.imax-mania-con .rc-txt {display:block; margin-bottom:35px; font-size:13px; color:#999; line-height:1.6;}
+.imax-mania-con .link-txt {position:absolute; left:40px; top:165px; font-size:14px; font-weight:500; color:#2899ef;}
+.imax-mania-con .txtgroup .link-txt {position:static; left:0; top:0;}
+.imax-mania-con .txtgroup .link-txt + .link-txt {margin-left:30px;}
+
+.layer-wrap .watched-cont {padding:10px 0 0;}
+.layer-wrap .watched-cont .wc-hd {text-align:center;}
+.layer-wrap .watched-cont .wc-hd .tit {font-size:18px;}
+.layer-wrap .watched-cont .wc-hd .tit .user-name {text-decoration:underline;}
+.layer-wrap .watched-cont .wc-hd .cnt {font-size:22px;}
+.layer-wrap .watched-cont .wc-hd .cnt .num {font-size:36px; color:#006cb6;}
+.layer-wrap .watched-cont .wc-hd .info {margin:17px 0 27px; font-weight:300; font-size:13px;}
+.layer-wrap .watched-cont .wc-hd .info > em {font-weight:500;}
+
+.layer-wrap .watched-cont .tbl table {width:100%; border-collapse:collapse; border-bottom:1px solid #b8b6aa;}
+.layer-wrap .watched-cont .tbl table thead th {background:#e2e2e0; font-size:11px;}
+.layer-wrap .watched-cont .tbl table th,
+.layer-wrap .watched-cont .tbl table td {padding:10px 20px; font-weight:500; border-left:1px solid #b8b6aa; border-top:1px solid #b8b6aa;}
+.layer-wrap .watched-cont .tbl table tr > *:first-child {border-left:0;}
+.layer-wrap .watched-cont .tbl table tbody th,
+.layer-wrap .watched-cont .tbl table tbody td {color:#000;}
+.layer-wrap .watched-cont .tbl .nodata {padding:60px 20px; text-align:center; font-weight:300;}
+
+.benefit-titbox {position:relative;}
+.benefit-titbox .grade-infobox {top:-25px;}
+.benefit-titbox .grade-infobox.user_grade_imax {right:0;}
+.benefit-titbox .grade-infobox.user_grade_imax .inner {top:20px;}
+.benefitbox .grade-infobox.user_grade_imax {padding-right:146px; background:url('../images/club/img_clubgrade_badge_imax.png') no-repeat 100% 20px;}
+
+/* 이벤트팝업 : 티켓형 */
+.evt-popup {position:absolute; display:none; z-index:10010;}
+.evt-popup .btn_down {color:#fff; font-size:16px; font-weight:500; background-color:#000;}
+.evt-popup .btn_down > span {display:block; height:42px; line-height:42px; width:220px;}
+.evt-popup .btn-closex {
+	position:absolute; top:15px; right:19px;
+	display:block; width:18px; height:18px;
+	font-size:0; background:url('../images/common/btn_popup_closex.png') no-repeat 0 0;
+}
+.evt-popup.ticket {background:#f37856;}
+.evt-popup.ticket .ticket-img {position:relative;}
+.evt-popup.ticket .ticket-img .ticket-num-area {position:absolute; left:80px; top:315px;}
+.evt-popup.ticket .ticket-img .ticket-num-area > div {display:inline-block;}
+.evt-popup.ticket .ticket-img .ticket-num-area > div:first-child {margin-right:45px;}
+.evt-popup.ticket .ticket-img .ticket-num-area > div:first-child .txt {min-width:155px;}
+.evt-popup.ticket .ticket-img .ticket-num-area > div > span {display:inline-block; height:20px; line-height:20px; vertical-align:middle; font-weight:500;}
+.evt-popup.ticket .ticket-img .ticket-num-area .tit {margin-right:13px; font-size:16px; color:#000;}
+.evt-popup.ticket .ticket-img .ticket-num-area .txt {font-size:20px; color:#f94b1b;}
+.evt-popup.ticket .ticket-img .btn-box {position:absolute; left:0; right:0; bottom:50px; text-align:center;}
+
+/* 2020 치어스 클럽*/
+.benefit-tabbox.cheers_club{height:auto!important}
+.cheers_club .benefit-tab{width:901px;}
+.cheers_club .tit_benefit{margin:0 0 35px 0}
+.cheers_club .tit_benefit em{font-size:15px}
+.benefit-list.cheers_club {margin:0;}
+.benefit-list.cheers_club.col1 > li {position: relative;width:280px;min-height:auto;padding:0 0 0 20px;margin:0 0 20px 0}
+.benefit-list.cheers_club.col2 > li {position: relative;width:auto;min-width:190px;max-width:225px; min-height:90px;padding:0;margin:0 23px 0 0}
+.benefit-list.cheers_club > li {background:none}
+.benefit-list.cheers_club > li ul li{font-size:14px;margin:0 0 10px 0}
+.benefit-list.cheers_club > li .sub_tit {position: relative;height:48px;margin:0 0 5px 0}
+.benefit-list.cheers_club > li .sub_tit em{font-size:20px;font-weight:600;color:#fff;display: block;}
+.benefit-list.cheers_club > li .sub_tit > div{display: inline-block;vertical-align: middle;}
+.benefit-list.cheers_club > li .sub_tit span{font-size:13px;font-weight:500;color:#fff;}
+.benefit-list.cheers_club > li .sub_tit:before{display:inline-block;vertical-align: middle;background:url('../images/club/ico_benefit_cheers.png') no-repeat 0 0;}
+.benefit-list.cheers_club > li ul{display: block;}
+.benefit-list.cheers_club > li.bl1 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 0;}
+.benefit-list.cheers_club > li.bl2 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 -100px;}
+.benefit-list.cheers_club > li.bl3 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 5px -200px;}
+.benefit-list.cheers_club > li.bl4 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 10px -300px;}
+.benefit-list.cheers_club > li.bl5 .sub_tit:before {height:45px;content:'';display:inline-block;width:80px;background-position: 0 -400px;}
+.benefit-list.cheers_club > li.bl6 .sub_tit:before {height:45px;content:'';display:inline-block;width:80px;background-position: 0 -500px;}
+.benefit-list.cheers_club > li.bl7 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 -600px;}
+.benefit-list.cheers_club > li.bl8 .sub_tit:before {height:45px;content:'';display:inline-block;width:60px;background-position: 0 -700px;}
+.benefit-list.cheers_club > li.bl1 ul{padding:0 0 0 65px}
+.benefit-list.cheers_club > li.bl2 ul{padding:0 0 0 65px}
+.benefit-list.cheers_club > li.bl3 ul{padding:0 0 0 65px}
+.benefit-list.cheers_club > li.bl4 ul{padding:0 0 0 65px}
+.benefit-list.cheers_club > li.bl5 ul{padding:0 0 0 85px}
+.benefit-list.cheers_club > li.bl6 ul{padding:0 0 0 85px}
+.benefit-list.cheers_club > li.bl7 ul{padding:0 0 0 85px}
+.benefit-list.cheers_club > li.bl8 ul{padding:0 0 0 85px}
+
+
+.cheers_club .benefit-sinfo{background: none;padding:0}
+.cheers_club .benefit-sinfo .benefit-slist{padding:0;width:800px}
+.cheers_club .benefit-sinfo > ul li ul{margin:0 0 20px 0}
+
+.evt_banner_area li{width:258px;height:172px;overflow: hidden;float:left;margin:0 20px 0 0}
+.evt_banner_area li a{display:block}
+.evt_banner_area li img{width:258px;height:172px;}
+
+.coupling_club .benefit-tab{width:901px}
+.coupling_club .benefit-sinfo {background: none;padding:0}
+.coupling_club .benefit-sinfo .benefit-slist{padding:0;}
+.coupling_club .benefit-sinfo > ul.type2{width:450px}
+.coupling_club .benefit-sinfo ul ul{margin:0 0 15px 0}
+.benefit-list.club_coupling_partner {margin:0;}
+.benefit-list.club_coupling_partner.col1 > li {position: relative;width:280px;min-height:108px;padding:0 0 0 20px;margin:0}
+.benefit-list.club_coupling_partner > li {background:none}
+.benefit-list.club_coupling_partner > li ul li{font-size:14px;margin:0 0 10px 0}
+.benefit-list.club_coupling_partner > li .sub_tit {position: relative;height:70px;margin:0 0 5px 0}
+.benefit-list.club_coupling_partner > li .sub_tit em{font-size:20px;font-weight:600;color:#fff;display: block;margin:10px 0 10px 0}
+.benefit-list.club_coupling_partner > li .sub_tit > div{display: inline-block;vertical-align: top;}
+.benefit-list.club_coupling_partner > li .sub_tit span{display:block;font-size:13px;font-weight:400;color:#999;line-height:1.5; background:url('../images/club/bul_circle_gray1-2.png') no-repeat 0 6px;letter-spacing: -1px;padding-left:7px}
+.benefit-list.club_coupling_partner > li .sub_tit:before{display:inline-block;vertical-align: middle;background:url('../images/club/ico_benefit_couping_partner_201102.png') no-repeat 0 0;}
+.benefit-list.club_coupling_partner > li ul{display: block;}
+.benefit-list.club_coupling_partner > li.bl1 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 0;}
+.benefit-list.club_coupling_partner > li.bl2 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -100px;}
+.benefit-list.club_coupling_partner > li.bl3 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -200px;}
+.benefit-list.club_coupling_partner > li.bl4 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -300px;}
+.benefit-list.club_coupling_partner > li.bl5 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -400px;}
+.benefit-list.club_coupling_partner > li.bl6 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -500px;}
+.benefit-list.club_coupling_partner > li.bl7 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -600px;}
+.benefit-list.club_coupling_partner > li.bl8 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -700px;}
+.benefit-list.club_coupling_partner > li.bl9 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -800px;}
+.benefit-list.club_coupling_partner > li.bl10 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -900px;}
+.benefit-list.club_coupling_partner > li.bl11 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1000px;}
+.benefit-list.club_coupling_partner > li.bl12 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1100px;}
+.benefit-list.club_coupling_partner > li.bl13 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1200px;}
+.benefit-list.club_coupling_partner > li.bl14 .sub_tit:before {height:70px;content:'';display:inline-block;width:90px;background-position: 0 -1300px;}
+.benefit-list.club_coupling_partner > li ul{padding:0 0 0 90px}
+
+/* S 유의사항 */
+.notice_wrap{position:relative; line-height:1.5em}
+.notice_wrap dt{position:absolute}
+.notice_wrap dt + dd > strong{margin-top:0}
+.notice_wrap dd{padding-left:58px}
+.notice_wrap dd > strong{display:block; margin-top:20px; color:#fff}
+.notice_wrap dd .mB15{margin-bottom:15px}
+
+	.dot_list{margin-top:10px}
+	.dot_list > li{position:relative; padding-left:10px}
+	.dot_list > li:before{content:''; position:absolute; left:3px; top:8px; width:3px; height:3px; background-color:#666; border-radius:50%}
+	.dot_list > li.strong{color:#fff}
+	.dot_list > li.strong:before{background-color:#fff}
+	.dot_list.dash{display:block; width:76%; margin-top:30px; padding-top:30px; background-image:linear-gradient(to left, white 80%, rgba(255,255,255,0) 0%); background-position:top; background-size:8px 1px; background-repeat:repeat-x}
+
+	.dash_list{margin:10px 0 15px}
+	.dash_list > li{line-height:1.2em}
+	.dash_list > li:before{content:'-'}
+
+	.count_list > li > strong{display:block; margin-top:10px; color:#fff}
+	.count_list > li > strong + .dot_list{margin-top:5px}

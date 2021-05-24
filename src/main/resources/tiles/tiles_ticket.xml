@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="ticketForm"  extends="baseLayout">
+		<put-attribute name="title" value="예약화면" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/ticket/ticketForm.jsp" />
+	</definition>
+	
+	<definition name="ticketPeople" extends="baseLayout">
+		<put-attribute name="title" value="인원선택" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/ticket/ticketPeople.jsp" />
+	</definition>
+	<definition name="ticketpayment" extends="baseLayout">
+		<put-attribute name="title" value="결제" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/ticket/ticketPayment.jsp" />
+	</definition>
+</tiles-definitions>

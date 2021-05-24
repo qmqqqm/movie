@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="support"  extends="baseLayout">
+		<put-attribute name="title" value="고객센터" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/support/support.jsp" />
+	</definition>
+	<definition name="ticketBoardList"  extends="baseLayout">
+		<put-attribute name="title" value="예약 게시판" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/support/ticketBorder/ticketBoardList.jsp" />
+	</definition>
+	<definition name="ticketBoardDetail"  extends="baseLayout">
+		<put-attribute name="title" value="예약문의 상세" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/support/ticketBorder/ticketBoardDetail.jsp" />
+	</definition>
+	<definition name="ticketBoardWriteForm" extends="baseLayout">
+	<put-attribute name="title" value="예약문의 하기" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/support/ticketBorder/ticketBoardWriteForm.jsp" />
+	</definition>
+	<definition name="ticketBoardModForm" extends="baseLayout">
+	<put-attribute name="title" value="예약문의 수정하기" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/support/ticketBorder/ticketBoardModForm.jsp" />
+	</definition>
+
+
+</tiles-definitions>

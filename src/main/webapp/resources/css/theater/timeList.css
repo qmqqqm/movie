@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+#content{
+	height:800px;
+}
+#timeList_wrap{
+	position:relative;
+	float:right;
+	width:800px;
+}
+#timeList_h1{	
+	font-size:30px;
+	border-bottom: 4px solid grey;
+	margin-top:20px;
+}
+
+
+#timeList_add{
+	text-align:right;
+	height:40px;
+	margin-top:10px;
+}
+#timeList_a{
+	font: bold 16px/40px "맑음 고딕";
+	border:2px solid pink;
+	padding:4px;
+}
+
+
+#timeList_table{
+	margin-top:10px;
+}
+#timeList_table td{
+	padding-bottom:20px;
+}
